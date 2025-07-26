@@ -1,4 +1,4 @@
-/* Reset & base styles */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,136 +6,105 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4fdf7;
   color: #333;
-  background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
-/* Header styles */
+/* Logo & Header */
 header {
-  background-color: #2f4f4f;
-  color: #fff;
-  padding: 10px 0;
+  background-color: #3F7652;
+  padding: 20px 40px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  text-align: center;
 }
 
-header .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #a7ff83;
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1.5rem;
+.logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1rem;
   font-weight: 500;
+  color: #d4f4e0;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
-header nav a:hover {
-  color: #a7ff83;
+nav a:hover {
+  color: #bfffd9;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
-  background: url('money-bg.png') center center/cover no-repeat;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-image: url("assets/money-background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
   text-align: center;
-  color: #fff;
-  padding: 0 1rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .hero p {
   font-size: 1.2rem;
+  margin-bottom: 30px;
   max-width: 600px;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-.hero .btn {
-  background-color: #a7ff83;
-  color: #000;
+button.primary {
+  background-color: #3F7652;
+  color: #fff;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 28px;
   font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
   border-radius: 5px;
-}
-
-.hero .btn:hover {
-  background-color: #90ee90;
-}
-
-/* Map section */
-.map-section {
-  background-color: #fff;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.map-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #2f4f4f;
-}
-
-/* Responsive SVG container */
-.map-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow-x: auto;
-}
-
-.map-container svg {
-  width: 100%;
-  height: auto;
-}
-
-.map-container path {
-  fill: #e0e0e0;
-  stroke: #2f4f4f;
-  stroke-width: 1;
-  transition: fill 0.3s ease;
-}
-
-.map-container path:hover {
-  fill: #a7ff83;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+  background-color: #2e5d3e;
 }
 
 /* Footer */
 footer {
-  background-color: #2f4f4f;
+  background-color: #3F7652;
   color: #fff;
   text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 4rem;
-}
-
-footer a {
-  color: #a7ff83;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }

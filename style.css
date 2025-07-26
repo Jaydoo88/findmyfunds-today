@@ -1,51 +1,141 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
   color: #333;
+  background-color: #f9f9f9;
 }
-.hero {
-  background-color: #3F7652;
-  color: white;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-.cta-button {
-  display: inline-block;
-  background-color: #E0E0E0;
-  color: #3F7652;
+
+/* Header styles */
+header {
+  background-color: #2f4f4f;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-  margin-top: 1rem;
-  text-decoration: none;
+}
+
+header .logo {
+  font-size: 1.8rem;
   font-weight: bold;
-  border-radius: 6px;
+  color: #a7ff83;
 }
-.map-section {
-  padding: 2rem;
-  text-align: center;
-}
-.success-stories, .donations, .faq {
-  padding: 2rem;
-  background-color: #ffffff;
-  margin: 1rem auto;
-  max-width: 800px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-.donation-buttons a {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background-color: #3F7652;
+
+header nav a {
   color: #fff;
   text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #a7ff83;
+}
+
+/* Hero section */
+.hero {
+  background: url('money-bg.png') center center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero .btn {
+  background-color: #a7ff83;
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   border-radius: 5px;
 }
-footer {
-  background-color: #3F7652;
-  color: white;
+
+.hero .btn:hover {
+  background-color: #90ee90;
+}
+
+/* Map section */
+.map-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2f4f4f;
+}
+
+/* Responsive SVG container */
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.map-container svg {
+  width: 100%;
+  height: auto;
+}
+
+.map-container path {
+  fill: #e0e0e0;
+  stroke: #2f4f4f;
+  stroke-width: 1;
+  transition: fill 0.3s ease;
+}
+
+.map-container path:hover {
+  fill: #a7ff83;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #2f4f4f;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: #a7ff83;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

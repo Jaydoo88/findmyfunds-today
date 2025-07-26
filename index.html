@@ -2,55 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FindMyFunds</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindMyFunds Logo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Logo Header -->
-  <header class="logo-header">
-    <img src="assets/FindMyFunds Logo.png" alt="FindMyFunds Logo" class="site-logo" />
-  </header>
+
+  <!-- Logo Top Bar -->
+  <div class="logo-bar">
+    <img src="assets/FindMyFunds Logo.png" alt="FindMyFunds Logo" class="logo">
+    <div class="tagline">Track It. Claim It. It's Yours.</div>
+  </div>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">Search</a></li>
-      <li><a href="#">Donate</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <a href="#mapSection">Search</a>
+      <a href="#donations">Donate</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Missing Money Might Be Waiting for You</h1>
-      <p>Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
-      <a href="#" class="cta-button">Click Your State to Start Searching</a>
-    </div>
+    <h1>💸 Missing Money Might Be Waiting for You</h1>
+    <p>Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
+    <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
+      🔎 Click Your State to Start Searching
+    </button>
   </section>
 
   <!-- Map Section -->
-  <section class="map-section">
+  <section id="mapSection" class="map-section">
     <h2>Select Your State</h2>
-    <img src="assets/us-map.png" alt="U.S. Map" class="us-map" />
+    <div class="map-container">
+      <img src="assets/map-placeholder.png" alt="U.S. Map" />
+    </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h3>Real People, Real Money Found</h3>
+  <!-- Success Stories -->
+  <section class="success-stories">
+    <h2>Real People, Real Money Found</h2>
     <ul>
       <li>“I found $418 from a forgotten insurance refund.”</li>
-      <li>“Got a check from my old job — thanks to this site!”</li>
+      <li>“$96 check from my old job — thanks to this site!”</li>
       <li>“We found $1,120 for our nonprofit from an old utility deposit!”</li>
     </ul>
   </section>
 
-  <!-- Tip Section -->
-  <section class="tip">
-    <h3>Did You Find Money? Tip Us!</h3>
+  <!-- Donation Section -->
+  <section id="donations" class="donations">
+    <h2>🎁 Did You Find Money? Tip Us!</h2>
     <p>If this site helped you recover lost funds, consider sending a thank-you donation.</p>
+    <div class="donation-buttons">
+      <a href="#">☕ Buy Us a Coffee</a>
+      <a href="#">💵 Venmo: @FindMyFunds</a>
+      <a href="#">🔗 PayPal Tip Link</a>
+    </div>
   </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Is this legit?</strong> Yes! We only link to official government websites.</p>
+    <p><strong>What’s the catch?</strong> None — we just hope you’ll tip if it helped.</p>
+    <p><strong>Can I help others?</strong> Please share the site with friends and family!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>FindMyFunds.today is not affiliated with any state government.</p>
+  </footer>
+
 </body>
 </html>

@@ -12,38 +12,36 @@ body {
   line-height: 1.6;
 }
 
-/* Logo & Header */
+/* Logo Bar at Top */
+.logo-bar {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo-bar .logo {
+  width: 220px;
+  height: auto;
+}
+
+.logo-bar .tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3F7652;
+  font-style: italic;
+  margin-left: 15px;
+}
+
+/* Navigation Bar */
 header {
   background-color: #3F7652;
   padding: 20px 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo {
-  width: 220px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.tagline {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #d4f4e0;
-  font-style: italic;
-}
-
-/* Navigation */
-nav {
-  margin-top: 15px;
+  justify-content: center;
 }
 
 nav a {
@@ -97,6 +95,78 @@ button.primary {
 
 button.primary:hover {
   background-color: #2e5d3e;
+}
+
+/* Map Section */
+.map-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.map-container img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Success Stories */
+.success-stories {
+  background-color: #e7f9ef;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.success-stories h2 {
+  margin-bottom: 20px;
+}
+
+.success-stories ul {
+  list-style: none;
+}
+
+.success-stories li {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Donation Section */
+.donations {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.donation-buttons a {
+  display: inline-block;
+  margin: 10px;
+  background-color: #3F7652;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.donation-buttons a:hover {
+  background-color: #2e5d3e;
+}
+
+/* FAQ Section */
+.faq {
+  background-color: #f0fdf4;
+  padding: 40px 20px;
+}
+
+.faq h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.faq p {
+  margin-bottom: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Footer */

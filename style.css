@@ -57,11 +57,11 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 3.2rem; /* increased for impact */
+  font-size: 2.8rem;      /* slightly smaller than before */
   margin-bottom: 20px;
-  color: #4AA886; /* logo green */
-  text-shadow: none; /* cleaner look with green */
-  font-weight: 700; /* ensure it's bold */
+  color: #4AA886;         /* logo green */
+  text-shadow: none;
+  font-weight: 700;
 }
 
 .hero p {
@@ -70,7 +70,8 @@ nav a:hover {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: none;
+  color: #ffffff;         /* restored to white */
+  text-shadow: none; /* keep shadow for readability */
 }
 
 button.primary {

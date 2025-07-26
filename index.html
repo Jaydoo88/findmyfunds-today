@@ -1,110 +1,78 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindMyFunds.today</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4fdf7;
-  color: #333;
-  line-height: 1.6;
-}
+  <!-- Logo Top Bar -->
+  <div class="logo-bar">
+    <img src="assets/TrackMyFunds Logo.png" alt="FindMyFunds Logo" class="logo">
+    <div class="tagline">Track It. Claim It. It's Yours.</div>
+  </div>
 
-/* Logo & Header */
-header {
-  background-color: #3F7652;
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="#mapSection">Search</a>
+      <a href="#donations">Donate</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
 
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>💸 Missing Money Might Be Waiting for You</h1>
+    <p>Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
+    <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
+      🔎 Click Your State to Start Searching
+    </button>
+  </section>
 
-.logo {
-  width: 220px;
-  height: auto;
-  margin-bottom: 10px;
-}
+  <!-- Map Section -->
+  <section id="mapSection" class="map-section">
+    <h2>Select Your State</h2>
+    <div class="map-container">
+      <img src="assets/map-placeholder.png" alt="U.S. Map" />
+    </div>
+  </section>
 
-.tagline {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #d4f4e0;
-  font-style: italic;
-}
+  <!-- Success Stories -->
+  <section class="success-stories">
+    <h2>Real People, Real Money Found</h2>
+    <ul>
+      <li>“I found $418 from a forgotten insurance refund.”</li>
+      <li>“$96 check from my old job — thanks to this site!”</li>
+      <li>“We found $1,120 for our nonprofit from an old utility deposit!”</li>
+    </ul>
+  </section>
 
-/* Navigation */
-nav {
-  margin-top: 15px;
-}
+  <!-- Donation Section -->
+  <section id="donations" class="donations">
+    <h2>🎁 Did You Find Money? Tip Us!</h2>
+    <p>If this site helped you recover lost funds, consider sending a thank-you donation.</p>
+    <div class="donation-buttons">
+      <a href="#">☕ Buy Us a Coffee</a>
+      <a href="#">💵 Venmo: @FindMyFunds</a>
+      <a href="#">🔗 PayPal Tip Link</a>
+    </div>
+  </section>
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Is this legit?</strong> Yes! We only link to official government websites.</p>
+    <p><strong>What’s the catch?</strong> None — we just hope you’ll tip if it helped.</p>
+    <p><strong>Can I help others?</strong> Please share the site with friends and family!</p>
+  </section>
 
-nav a:hover {
-  color: #bfffd9;
-}
+  <!-- Footer -->
+  <footer>
+    <p>FindMyFunds.today is not affiliated with any state government.</p>
+  </footer>
 
-/* Hero Section */
-.hero {
-  background-image: url("assets/money-background.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-button.primary {
-  background-color: #3F7652;
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-button.primary:hover {
-  background-color: #2e5d3e;
-}
-
-/* Footer */
-footer {
-  background-color: #3F7652;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
+</body>
+</html>

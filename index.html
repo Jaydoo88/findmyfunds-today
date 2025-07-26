@@ -4,72 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FindMyFunds.today</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8f7;
       color: #333;
     }
 
-    header.hero {
-      background-color: #3d6f52;
+    header {
+      background-color: #3a6f51;
       color: white;
-      padding: 60px 20px;
+      padding: 60px 20px 40px;
       text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 
     .cta-button {
       display: inline-block;
-      margin-top: 20px;
       padding: 12px 24px;
       font-size: 16px;
-      background-color: #fff;
-      color: #3d6f52;
+      background-color: white;
+      color: #3a6f51;
       text-decoration: none;
-      border-radius: 6px;
       font-weight: bold;
+      border-radius: 5px;
     }
 
-    section {
-      padding: 40px 20px;
+    h2 {
       text-align: center;
+      margin-top: 40px;
     }
 
     .map-container {
-      max-width: 1000px;
-      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+      max-width: 600px;
       padding: 20px;
-      border: 1px solid #ccc;
-      background-color: #fff;
+      background: white;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    svg rect:hover {
+      fill: #5ca58d;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style-type: "💬 ";
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .donation-buttons {
+      margin-top: 20px;
     }
 
     .donation-buttons a {
       display: inline-block;
-      margin: 10px;
+      margin: 6px;
       padding: 10px 16px;
-      background-color: #3d6f52;
+      background-color: #3a6f51;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-    }
-
-    svg:hover path {
-      cursor: pointer;
-      fill: #007bff;
+      font-size: 14px;
     }
 
     footer {
       text-align: center;
+      font-size: 13px;
+      background: #eaeaea;
       padding: 20px;
-      background-color: #f1f1f1;
-      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header class="hero">
+
+  <header>
     <h1>💸 Missing Money Might Be Waiting for You</h1>
     <p>Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
     <a href="#mapSection" class="cta-button">🔎 Click Your State to Start Searching</a>
@@ -78,21 +113,21 @@
   <section id="mapSection">
     <h2>Select Your State</h2>
     <div class="map-container">
-      <!-- SAMPLE SVG MAP (Replace with full US map when ready) -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="auto">
-        <rect x="10" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('California')"/>
-        <text x="25" y="30" font-size="10" fill="black">CA</text>
+      <!-- Simple SVG with 3 sample states -->
+      <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="80" height="40" fill="#ddd" stroke="#999" onclick="window.location.href='https://ucpi.sco.ca.gov/'" />
+        <text x="40" y="35" font-size="14" text-anchor="middle" fill="#000">CA</text>
 
-        <rect x="80" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('Texas')"/>
-        <text x="95" y="30" font-size="10" fill="black">TX</text>
+        <rect x="110" y="10" width="80" height="40" fill="#ddd" stroke="#999" onclick="window.location.href='https://claimittexas.gov/'" />
+        <text x="150" y="35" font-size="14" text-anchor="middle" fill="#000">TX</text>
 
-        <rect x="150" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('Florida')"/>
-        <text x="165" y="30" font-size="10" fill="black">FL</text>
+        <rect x="210" y="10" width="80" height="40" fill="#ddd" stroke="#999" onclick="window.location.href='https://fltreasurehunt.gov/'" />
+        <text x="250" y="35" font-size="14" text-anchor="middle" fill="#000">FL</text>
       </svg>
     </div>
   </section>
 
-  <section class="success-stories">
+  <section>
     <h2>Real People, Real Money Found</h2>
     <ul>
       <li>“I found $418 from a forgotten insurance refund.”</li>
@@ -101,7 +136,7 @@
     </ul>
   </section>
 
-  <section class="donations">
+  <section>
     <h2>🎁 Did You Find Money? Tip Us!</h2>
     <p>If this site helped you recover lost funds, consider sending a thank-you donation.</p>
     <div class="donation-buttons">
@@ -111,7 +146,7 @@
     </div>
   </section>
 
-  <section class="faq">
+  <section>
     <h2>Frequently Asked Questions</h2>
     <p><strong>Is this legit?</strong> Yes! We only link to official government websites.</p>
     <p><strong>What’s the catch?</strong> None — we just hope you’ll tip if it helped.</p>
@@ -121,5 +156,6 @@
   <footer>
     <p>FindMyFunds.today is not affiliated with any state government.</p>
   </footer>
+
 </body>
 </html>

@@ -5,6 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FindMyFunds.today</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header.hero {
+      background-color: #3d6f52;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #3d6f52;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .map-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .donation-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 16px;
+      background-color: #3d6f52;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    svg:hover path {
+      cursor: pointer;
+      fill: #007bff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -13,10 +75,20 @@
     <a href="#mapSection" class="cta-button">🔎 Click Your State to Start Searching</a>
   </header>
 
-  <section id="mapSection" class="map-section">
+  <section id="mapSection">
     <h2>Select Your State</h2>
     <div class="map-container">
-      <img src="assets/map-placeholder.png" alt="U.S. Map" />
+      <!-- SAMPLE SVG MAP (Replace with full US map when ready) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="auto">
+        <rect x="10" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('California')"/>
+        <text x="25" y="30" font-size="10" fill="black">CA</text>
+
+        <rect x="80" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('Texas')"/>
+        <text x="95" y="30" font-size="10" fill="black">TX</text>
+
+        <rect x="150" y="10" width="50" height="30" fill="#d3d3d3" stroke="black" onclick="alert('Florida')"/>
+        <text x="165" y="30" font-size="10" fill="black">FL</text>
+      </svg>
     </div>
   </section>
 

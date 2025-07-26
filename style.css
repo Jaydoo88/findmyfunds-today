@@ -1,146 +1,110 @@
-/* Reset and base styles */
-body {
+/* Reset and Base Styles */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4fdf7;
   color: #333;
+  line-height: 1.6;
 }
 
-/* HERO SECTION */
-.hero {
-  background: url('assets/money-background.png') no-repeat right center;
-  background-size: cover;
+/* Logo & Header */
+header {
+  background-color: #3F7652;
+  padding: 20px 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 90vh;
-  padding: 60px 40px;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
-.hero-content {
-  max-width: 50%;
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d4f4e0;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #bfffd9;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("assets/money-background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-.cta-button {
+button.primary {
   background-color: #3F7652;
-  color: white;
-  padding: 14px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1rem;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+button.primary:hover {
   background-color: #2e5d3e;
 }
 
-/* MAP SECTION */
-.map-section {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #f0f5f1;
-}
-
-.map-section h2 {
-  color: #3F7652;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.map-container img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* SUCCESS STORIES */
-.success-stories {
-  background-color: white;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.success-stories h2 {
-  color: #3F7652;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.success-stories ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.success-stories li {
-  font-style: italic;
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-
-/* DONATIONS */
-.donations {
-  background-color: #f0f5f1;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.donations h2 {
-  color: #3F7652;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.donation-buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  background-color: #3F7652;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.donation-buttons a:hover {
-  background-color: #2e5d3e;
-}
-
-/* FAQ SECTION */
-.faq {
-  background-color: white;
-  padding: 50px 20px;
-}
-
-.faq h2 {
-  color: #3F7652;
-  margin-bottom: 20px;
-}
-
-.faq p {
-  margin: 10px 0;
-  font-size: 1.05rem;
-}
-
-/* FOOTER */
+/* Footer */
 footer {
   background-color: #3F7652;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
   font-size: 0.9rem;
 }

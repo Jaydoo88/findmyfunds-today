@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,31 +6,28 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #333;
-}
-
-/* Header & Logo */
-.header {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
   background-color: #ffffff;
-  padding: 10px 0;
+  color: #222;
+}
+
+/* Logo Header */
+.logo-header {
+  background-color: #ffffff;
   text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.logo-container {
-  margin-bottom: 5px;
+.site-logo {
+  max-height: 90px;
+  width: auto;
 }
 
-.logo {
-  max-width: 250px;
-  height: auto;
-}
-
-/* Navigation */
+/* Navigation Bar */
 .navbar {
-  background-color: #326b4d;
+  background-color: #33684A;
   padding: 10px 0;
 }
 
@@ -38,13 +35,14 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .navbar a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .navbar a:hover {
@@ -53,97 +51,87 @@ body {
 
 /* Hero Section */
 .hero {
-  background-image: url('assets/money-background.jpg');
+  background-image: url("assets/money-background.jpg");
   background-size: cover;
   background-position: center;
-  padding: 80px 20px;
   text-align: center;
   color: #fff;
+  padding: 100px 20px 60px 20px;
+  position: relative;
 }
 
-.hero-content {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: 1.8rem; /* Reduced from 2.2rem to fix overlap */
+.hero h1 {
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 15px;
 }
 
-.hero-subtitle {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: #f0f0f0;
+.hero p {
+  font-size: 16px;
+  margin-bottom: 25px;
 }
 
-/* CTA Button */
-button.primary {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #326b4d;
+.cta-button {
+  background-color: #33684A;
   color: #fff;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button.primary:hover {
-  background-color: #28553d;
+.cta-button:hover {
+  background-color: #245f3d;
 }
 
 /* Map Section */
 .map-section {
   text-align: center;
-  padding: 60px 20px;
   background-color: #f9f9f9;
-}
-
-.map-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  padding: 60px 20px;
 }
 
 .us-map {
-  max-width: 600px;
-  width: 100%;
+  max-width: 90%;
   height: auto;
   margin-top: 20px;
 }
 
-/* Testimonials */
+/* Testimonials Section */
 .testimonials {
   padding: 40px 20px;
-  text-align: center;
+  background-color: #fff;
 }
 
 .testimonials h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
 }
 
 .testimonials ul {
-  list-style: none;
   max-width: 600px;
   margin: 0 auto;
-  text-align: left;
+  list-style: disc;
+  padding-left: 20px;
 }
 
-.testimonials li {
-  margin-bottom: 0.75rem;
-}
-
-/* Donation Pitch */
-.donation-pitch {
-  padding: 40px 20px;
+/* Tip Section */
+.tip {
+  background-color: #f0f0f0;
+  padding: 30px 20px;
   text-align: center;
-  background-color: #fafafa;
 }
 
-.donation-pitch h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+.tip h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tip p {
+  font-size: 16px;
 }

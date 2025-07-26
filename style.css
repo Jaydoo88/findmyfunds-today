@@ -97,8 +97,10 @@ button.primary:hover {
 }
 
 .map-container img {
-  max-width: 100%;
+  width: 50%;            /* shrink image to half size */
   height: auto;
+  display: block;
+  margin: 0 auto;         /* centers it horizontally */
 }
 
 /* Success Stories */

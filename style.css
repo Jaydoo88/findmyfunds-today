@@ -56,10 +56,10 @@ nav a:hover {
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+.hero h1,
+.hero p {
+  color: #4AA886; /* match logo green */
+  text-shadow: none; /* optional: remove white text shadows */
 }
 
 .hero p {

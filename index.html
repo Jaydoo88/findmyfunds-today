@@ -33,11 +33,18 @@
 
   <!-- Map Section -->
   <section id="mapSection" class="map-section">
-    <h2>Select Your State</h2>
-    <div class="map-container">
-      <img src="assets/USA Map.png" alt="U.S. Map" />
-    </div>
-  </section>
+  <h2>Select Your State</h2>
+  <div class="map-container">
+    <img src="assets/USA Map.png" alt="U.S. Map" usemap="#usmap" class="map-image" />
+    <map name="usmap">
+      <!-- Example clickable states -->
+      <area shape="rect" coords="45,70,85,110" href="https://www.claimit.ca.gov" alt="California" title="California">
+      <area shape="rect" coords="135,90,175,130" href="https://www.claimittexas.gov" alt="Texas" title="Texas">
+      <area shape="rect" coords="280,40,320,80" href="https://www.osc.state.ny.us/unclaimed-funds" alt="New York" title="New York">
+      <!-- Add more states here -->
+    </map>
+  </div>
+</section>
 
   <!-- Success Stories -->
   <section class="success-stories">

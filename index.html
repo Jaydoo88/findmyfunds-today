@@ -2,37 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindMyFunds</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="logo-container">
-      <img src="assets/FindMyFunds Logo.png" alt="FindMyFunds Logo" class="logo" />
-    </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </nav>
+  <!-- Logo Header -->
+  <header class="logo-header">
+    <img src="assets/FindMyFunds Logo.png" alt="FindMyFunds Logo" class="site-logo" />
   </header>
 
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Donate</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Missing Money Might Be Waiting for You</h1>
-      <p class="hero-subtitle">Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
-      <button class="primary">Click Your State to Start Searching</button>
+      <h1>Missing Money Might Be Waiting for You</h1>
+      <p>Billions in unclaimed funds are sitting in state vaults. It takes less than 30 seconds to check.</p>
+      <a href="#" class="cta-button">Click Your State to Start Searching</a>
     </div>
   </section>
 
+  <!-- Map Section -->
   <section class="map-section">
     <h2>Select Your State</h2>
     <img src="assets/us-map.png" alt="U.S. Map" class="us-map" />
   </section>
 
+  <!-- Testimonials Section -->
   <section class="testimonials">
     <h3>Real People, Real Money Found</h3>
     <ul>
@@ -42,7 +47,8 @@
     </ul>
   </section>
 
-  <section class="donation-pitch">
+  <!-- Tip Section -->
+  <section class="tip">
     <h3>Did You Find Money? Tip Us!</h3>
     <p>If this site helped you recover lost funds, consider sending a thank-you donation.</p>
   </section>

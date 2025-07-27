@@ -84,6 +84,17 @@ nav a:hover {
   white-space: pre-line;
 }
 
+/* Map Section */
+.map-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  color: #2d8659;
+  margin-bottom: 2rem;
+}
 button.primary {
   background-color: #4AA886;
   color: #fff;

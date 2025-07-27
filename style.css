@@ -220,8 +220,8 @@ footer {
   top: 50%;
   left: calc(50% - 600px); /* shift left from center */
   transform: translate(-50%, -50%) rotate(-3deg);
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, #4AA886 60%, #3a866c 100%);
   clip-path: polygon(
     50% 0%, 60% 30%, 100% 30%, 70% 50%,

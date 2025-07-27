@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Typography – Fredoka Cleanup */
 body {
   font-family: 'Fredoka', sans-serif;
   font-weight: 400;
@@ -15,14 +14,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fredoka', sans-serif;
   font-weight: 600;
   color: #2d8659;
   margin-bottom: 1rem;
 }
 
 p {
-  font-family: 'Fredoka', sans-serif;
   font-weight: 400;
   color: #2d8659;
 }
@@ -63,31 +60,28 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  position: relative; /* allows absolutely positioned children */
+  position: relative;
   background-image: url("assets/money-background.jpg");
   background-size: cover;
   background-position: center top;
-  color: white;
   padding: 140px 20px 160px 20px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.75rem;  /* Previous: 3rem */
+  font-size: 2.75rem;
   font-weight: 700;
-  font-family: 'Fredoka', sans-serif; /* Or whatever font you're using */
   color: #2d8659;
   margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.25rem;
-  color: #2d8659;               /* Match your green */
+  color: #2d8659;
   margin: 0 auto 1.5rem auto;
   max-width: 600px;
-  text-align: center;
   line-height: 1.5;
-  white-space: pre-line;        /* Enables line breaks */
+  white-space: pre-line;
 }
 
 button.primary {
@@ -109,7 +103,6 @@ button.primary:hover {
 /* Map Section */
 .map-section {
   padding: 60px 20px;
-  text-align: center;
 }
 
 .map-image {
@@ -118,29 +111,28 @@ button.primary:hover {
   margin: 0 auto;
 }
 
+/* Testimonial Section */
 .testimonial-section {
-  text-align: center;
   background-color: #f4fdf7;
   padding: 3rem 1rem;
   margin-top: 3rem;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.06);
+  text-align: center;
 }
 
 .testimonial-section h3 {
   font-size: 1.1rem;
-  color: #2d8659;
-  font-family: 'Fredoka', sans-serif;
   margin-bottom: 1rem;
 }
 
 .testimonial-section p {
   font-size: 1.1rem;
-  color: #2d8659;
   margin: 0.5rem 0;
   font-style: italic;
 }
 
+/* Check Proof Section */
 .check-proof {
   margin-top: 2rem;
 }
@@ -153,7 +145,6 @@ button.primary:hover {
 
 .check-proof p {
   font-size: 1rem;
-  color: #2d8659;
 }
 
 .check-image {
@@ -174,8 +165,8 @@ button.primary:hover {
 /* Donations */
 .donations {
   padding: 60px 20px;
-  text-align: center;
   background-color: #e7f9f0;
+  text-align: center;
 }
 
 .donation-buttons a {
@@ -192,9 +183,9 @@ button.primary:hover {
 /* FAQ */
 .faq {
   padding: 60px 20px;
-  text-align: left;
   max-width: 800px;
   margin: auto;
+  text-align: left;
 }
 
 /* Footer */
@@ -269,7 +260,7 @@ footer {
 .money-starburst {
   position: absolute;
   top: 50%;
-  left: calc(50% - 600px); /* shift left from center */
+  left: calc(50% - 600px);
   transform: translate(-50%, -50%) rotate(-3deg);
   width: 400px;
   height: 400px;
@@ -288,10 +279,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 20;
-  word-break: break-word; /* allows wrapping */
+  word-break: break-word;
   flex-direction: column;
 }
 

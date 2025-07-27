@@ -88,6 +88,7 @@ nav a:hover {
 .map-section {
   padding: 60px 20px;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .map-section h2 {
@@ -95,6 +96,7 @@ nav a:hover {
   color: #2d8659;
   margin-bottom: 2rem;
 }
+
 button.primary {
   background-color: #4AA886;
   color: #fff;

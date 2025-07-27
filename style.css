@@ -58,23 +58,20 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-family: 'Bungee', sans-serif;
-}
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #4AA886;
-  text-shadow: none;
-  font-weight: 700;
+  font-family: 'Fredoka One', cursive; /* Or Bungee/Chewy/etc */
+  font-size: 3rem;         /* Adjust for desired boldness */
+  color: #2d8659;          /* Green color (matches your scheme) */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: center;      /* Or 'left' if needed */
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #4AA886;
-  text-shadow: none;
+  font-size: 1.25rem;
+  color: white;            /* Subtitle in white */
+  margin-bottom: 1.5rem;
+  text-align: center;      /* Or 'left' if needed */
+  line-height: 1.5;
 }
 
 button.primary {

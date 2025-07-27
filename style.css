@@ -58,12 +58,11 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-family: 'Fredoka One', cursive; /* Or Bungee/Chewy/etc */
-  font-size: 3rem;         /* Adjust for desired boldness */
-  color: #2d8659;          /* Green color (matches your scheme) */
+  font-size: 2.75rem;  /* Previous: 3rem */
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif; /* Or whatever font you're using */
+  color: #2d8659;
   margin-bottom: 1rem;
-  line-height: 1.2;
-  text-align: center;      /* Or 'left' if needed */
 }
 
 .hero p {

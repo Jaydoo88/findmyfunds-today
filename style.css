@@ -218,8 +218,8 @@ footer {
 .money-starburst {
   position: absolute;
   top: 50%;
-  left: 60px;
-  transform: translateY(-50%) rotate(-3deg);
+  left: 25%;
+  transform: translate(-50%, -50%) rotate(-3deg);
   width: 200px;
   height: 200px;
   background: radial-gradient(circle, #4AA886 60%, #3a866c 100%);

@@ -103,21 +103,57 @@ button.primary:hover {
   margin: 0 auto;
 }
 
-/* Success Stories */
-.success-stories {
-  padding: 60px 20px;
-  background-color: #ffffff;
+.testimonial-section {
   text-align: center;
+  background-color: #f4fdf7;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.06);
 }
 
-.success-stories ul {
-  list-style-type: none;
-  margin-top: 20px;
+.testimonial-section h3 {
+  font-size: 2rem;
+  color: #2d8659;
+  font-family: 'Fredoka', sans-serif;
+  margin-bottom: 1rem;
 }
 
-.success-stories li {
-  margin-bottom: 10px;
+.testimonial-section p {
+  font-size: 1.1rem;
+  color: #2d8659;
+  margin: 0.5rem 0;
   font-style: italic;
+}
+
+.check-proof {
+  margin-top: 2rem;
+}
+
+.check-proof h4 {
+  font-size: 1.5rem;
+  color: #1e704c;
+  margin-bottom: 0.5rem;
+}
+
+.check-proof p {
+  font-size: 1rem;
+  color: #2d8659;
+}
+
+.check-image {
+  width: 500px;
+  max-width: 90%;
+  border: 2px solid #4aa886;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 /* Donations */

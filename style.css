@@ -5,11 +5,26 @@
   box-sizing: border-box;
 }
 
+/* Typography – Fredoka Cleanup */
 body {
-  font-family: 'Chewy', cursive;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 400;
   background-color: #f4fdf7;
   color: #333;
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: #2d8659;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 400;
+  color: #2d8659;
 }
 
 /* Logo Bar */

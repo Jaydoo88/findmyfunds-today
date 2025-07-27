@@ -303,7 +303,7 @@ footer {
   transform: translate(-50%, -50%) rotate(-3deg);
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #4AA886 60%, #3a866c 100%);
+  background: radial-gradient(circle at center, #4AA886 60%, #2d7059 100%);
   clip-path: polygon(
     50% 0%, 60% 30%, 100% 30%, 70% 50%,
     100% 70%, 60% 70%, 50% 100%, 40% 70%,
@@ -318,20 +318,35 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 20;
-  word-break: break-word;
   flex-direction: column;
+  word-break: break-word;
+  z-index: 20;
+
+  /* 🟩 3D POP EFFECTS */
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),     /* main drop shadow */
+    inset 0 4px 8px rgba(255, 255, 255, 0.15), /* inner light glow */
+    inset 0 -6px 8px rgba(0, 0, 0, 0.2); /* inner depth shadow */
+  border: 2px solid #2d7059;
 }
 
 @media (max-width: 768px) {
   .money-starburst {
-    top: auto;
+    position: absolute;
     bottom: 30px;
     left: 10px;
     width: 140px;
     height: 140px;
     font-size: 0.9rem;
     transform: none;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.2),
+      inset 0 2px 4px rgba(255, 255, 255, 0.12),
+      inset 0 -3px 4px rgba(0, 0, 0, 0.15);
   }
 }

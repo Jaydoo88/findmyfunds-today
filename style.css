@@ -58,6 +58,8 @@ nav a:hover {
 }
 
 .hero h1 {
+  font-family: 'Bungee', sans-serif;
+}
   font-size: 2.8rem;
   margin-bottom: 20px;
   color: #4AA886;

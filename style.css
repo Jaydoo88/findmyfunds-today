@@ -217,10 +217,11 @@ footer {
 /* 💵 Hero Money Bubble Burst */
 .money-starburst {
   position: absolute;
-  top: 80px;
+  top: 50%;
   left: 60px;
-  width: 160px;
-  height: 160px;
+  transform: translateY(-50%) rotate(-3deg);
+  width: 200px;
+  height: 200px;
   background: radial-gradient(circle, #4AA886 60%, #3a866c 100%);
   clip-path: polygon(
     50% 0%, 60% 30%, 100% 30%, 70% 50%,
@@ -229,26 +230,25 @@ footer {
   );
   color: white;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: center;
   line-height: 1.3;
-  padding: 20px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 20;
-  transform: rotate(-2deg);
 }
 
 @media (max-width: 768px) {
-  .money-burst {
-    width: 120px;
-    height: 120px;
-    font-size: 0.85rem;
-    left: 10px;
+  .money-starburst {
     top: auto;
-    bottom: 20px;
+    bottom: 30px;
+    left: 10px;
+    width: 140px;
+    height: 140px;
+    font-size: 0.9rem;
     transform: none;
   }
 }

@@ -218,7 +218,7 @@ footer {
 .money-starburst {
   position: absolute;
   top: 50%;
-  left: calc(50% - 800px); /* shift left from center */
+  left: calc(50% - 600px); /* shift left from center */
   transform: translate(-50%, -50%) rotate(-3deg);
   width: 200px;
   height: 200px;

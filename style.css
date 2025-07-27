@@ -178,8 +178,20 @@ button.primary:hover {
 /* Donations */
 .donations {
   padding: 60px 20px;
-  background-color: #e7f9f0;
   text-align: center;
+  background-color: #ffffff; /* Changed from light green to white */
+}
+
+.donations h2 {
+  font-size: 2rem;
+  color: #2d8659;
+  margin-bottom: 1rem;
+}
+
+.donations p {
+  font-size: 1.1rem;
+  color: #2d8659;
+  margin-bottom: 2rem;
 }
 
 .donation-buttons a {
@@ -191,6 +203,11 @@ button.primary:hover {
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.donation-buttons a:hover {
+  background-color: #3A866C;
 }
 
 /* FAQ */

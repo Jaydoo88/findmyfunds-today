@@ -212,7 +212,7 @@ button.primary:hover {
 
 /* FAQ Section */
 .faq {
-  background-color: #ffffff;        /* optional: match section styling */
+  background-color: #f4fdf7;        /* optional: match section styling */
   padding: 60px 20px;
   max-width: 800px;
   margin: 0 auto;                   /* centers the whole section horizontally */

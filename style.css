@@ -68,10 +68,12 @@ nav a:hover {
 
 .hero p {
   font-size: 1.25rem;
-  color: white;            /* Subtitle in white */
-  margin-bottom: 1.5rem;
-  text-align: center;      /* Or 'left' if needed */
+  color: #2d8659;               /* Match your green */
+  margin: 0 auto 1.5rem auto;
+  max-width: 600px;
+  text-align: center;
   line-height: 1.5;
+  white-space: pre-line;        /* Enables line breaks */
 }
 
 button.primary {

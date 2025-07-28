@@ -242,16 +242,25 @@ button.primary:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
-.social-icons a {
-  font-size: 2rem;
-  margin: 0 12px;
-  text-decoration: none;
-  transition: transform 0.2s ease;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
 }
 
-.social-icons a:hover {
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(39%) sepia(76%) saturate(360%) hue-rotate(104deg) brightness(92%) contrast(92%);
+}
+
+.social-icons img:hover {
   transform: scale(1.2);
 }
+
 /* Footer */
 footer {
   background-color: #ffffff;

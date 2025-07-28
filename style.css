@@ -227,6 +227,31 @@ button.primary:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
+/* Social */
+.social-share {
+  background-color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.social-share h3 {
+  color: #2d8659;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  margin: 0 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
 /* Footer */
 footer {
   background-color: #ffffff;

@@ -489,20 +489,24 @@ footer {
     padding: 0 10px;
   }
 
-  /* 🔄 Make Starburst Adjust Even Better on Small Devices */
+ @media (max-width: 768px) {
   .money-starburst {
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    width: 130px;
-    height: 130px;
-    font-size: 0.85rem;
+    position: static;
+    width: 160px;
+    height: 160px;
+    margin: 20px auto 0 auto;
+    font-size: 0.95rem;
+    transform: none;
     padding: 14px;
-    text-align: center;
     clip-path: polygon(
       50% 0%, 60% 30%, 100% 30%, 70% 50%,
       100% 70%, 60% 70%, 50% 100%, 40% 70%,
       0% 70%, 30% 50%, 0% 30%, 40% 30%
     );
+    z-index: auto;
+  }
+
+  .hero {
+    padding-bottom: 40px;
   }
 }

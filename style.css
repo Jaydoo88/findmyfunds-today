@@ -227,43 +227,40 @@ button.primary:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
-/* Social */
-ake sure you download and place the appropriate .svg files (Facebook, Twitter, LinkedIn, WhatsApp, Email) into your assets/ folder.
-
-✅ Step 2: CSS to Style the Share Icons Section
-Add this to your CSS:
-
-css
-Copy
-Edit
+/* Social Share Section */
 .social-share {
-  background-color: white;
-  padding: 40px 20px;
+  background-color: #ffffff;
+  padding: 3rem 1rem;
   text-align: center;
   border-top: 1px solid #e0e0e0;
+  margin-top: 3rem;
 }
 
 .social-share h3 {
   color: #2d8659;
   font-size: 1.8rem;
-  margin-bottom: 20px;
   font-family: 'Fredoka', sans-serif;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .social-icons a img {
   width: 36px;
   height: 36px;
-  transition: transform 0.2s ease;
+  filter: invert(40%) sepia(28%) saturate(691%) hue-rotate(114deg) brightness(95%) contrast(87%);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .social-icons a:hover img {
   transform: scale(1.2);
+  filter: invert(50%) sepia(65%) saturate(900%) hue-rotate(114deg) brightness(105%) contrast(100%);
 }
 
 /* Footer */

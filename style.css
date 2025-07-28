@@ -418,9 +418,8 @@ footer {
   }
 
   .hero {
-    padding: 100px 15px 120px 15px;
-    background-position: center top;
-  }
+  padding: 100px 15px 200px 15px; /* Add more bottom space */
+}
 
   .hero h1 {
     font-size: 2rem;
@@ -490,23 +489,26 @@ footer {
   }
 
  @media (max-width: 768px) {
+  .hero {
+    padding: 100px 15px 200px 15px;
+  }
+
   .money-starburst {
     position: static;
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     margin: 20px auto 0 auto;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
     transform: none;
     padding: 14px;
+    text-align: center;
+    word-break: break-word;
     clip-path: polygon(
       50% 0%, 60% 30%, 100% 30%, 70% 50%,
       100% 70%, 60% 70%, 50% 100%, 40% 70%,
       0% 70%, 30% 50%, 0% 30%, 40% 30%
     );
     z-index: auto;
-  }
-
-  .hero {
-    padding-bottom: 40px;
   }
 }

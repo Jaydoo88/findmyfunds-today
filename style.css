@@ -490,22 +490,22 @@ footer {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 100px 15px 200px 15px;
+    padding: 180px 15px 200px 15px; /* pushes text down */
     background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
-    position: relative; /* Needed to position starburst */
+    position: relative;
   }
 
   .money-starburst {
     position: absolute;
-    top: 20px; /* Adjust as needed */
+    top: 30px;
     left: 10px;
-    width: 130px;
-    height: 130px;
-    font-size: 0.65rem;
-    line-height: 1.2;
-    padding: 12px;
+    width: 120px;
+    height: 120px;
+    font-size: 0.6rem;
+    line-height: 1.1;
+    padding: 10px;
     text-align: center;
     word-break: break-word;
     clip-path: polygon(
@@ -520,6 +520,6 @@ footer {
   .hero p {
     position: relative;
     z-index: 1;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }

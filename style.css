@@ -271,27 +271,35 @@ footer {
   font-size: 0.9rem;
 }
 
-/* State Circle Selector Grid */
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+/* State Grid Section */
+.map-section {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.map-section h2 {
+  font-size: 2rem;
+  color: #2c5c3d;
+  font-family: 'Fredoka', sans-serif;
 }
 
+/* Grid container for all states */
+.state-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 16px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+/* Individual clickable circle */
 .state-circle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background-color: #4AA886;
   color: #fff;
   border: 2px solid #2c5c3d;
@@ -305,6 +313,19 @@ footer {
 .state-circle:hover {
   background-color: #2f6f4e;
   transform: scale(1.05);
+}
+
+/* Responsive: 5 across on small screens */
+@media (max-width: 768px) {
+  .state-grid-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .state-grid-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Mobile Responsive Layout */

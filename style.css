@@ -329,7 +329,7 @@ footer {
   }
 }
 
-/* 💵 Hero Money Bubble Burst */
+/* Hero Money Bubble Burst */
 .money-starburst {
   position: absolute;
   top: 50%;
@@ -337,7 +337,7 @@ footer {
   transform: translate(-50%, -50%) rotate(-3deg);
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle at center, #4AA886 60%, #2d7059 100%);
+  background: linear-gradient(145deg, #4AA886, #2d7059);
   clip-path: polygon(
     50% 0%, 60% 30%, 100% 30%, 70% 50%,
     100% 70%, 60% 70%, 50% 100%, 40% 70%,
@@ -356,14 +356,14 @@ footer {
   word-break: break-word;
   z-index: 20;
 
-  /* 🟩 3D POP EFFECTS */
+  /* 💠 Bevel / Embossed Look */
   box-shadow:
-  4px 8px 20px rgba(0, 0, 0, 0.35), /* deeper outer shadow */
-  inset 2px 2px 10px rgba(255, 255, 255, 0.25), /* top-left inner light */
-  inset -4px -4px 10px rgba(0, 0, 0, 0.3); /* bottom-right inner depth */;
+    6px 6px 12px rgba(0, 0, 0, 0.3),
+    -6px -6px 12px rgba(255, 255, 255, 0.15),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
   border: 2px solid #2d7059;
 }
-
 @media (max-width: 768px) {
   .money-starburst {
     position: absolute;

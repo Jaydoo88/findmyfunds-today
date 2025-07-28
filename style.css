@@ -498,3 +498,23 @@ footer {
     );
   }
 }
+/* Default (desktop shows, mobile hidden) */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+/* On small screens: show mobile version, hide desktop */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}

@@ -254,13 +254,11 @@ button.primary:hover {
 .social-icons a img {
   width: 36px;
   height: 36px;
-  filter: invert(40%) sepia(28%) saturate(691%) hue-rotate(114deg) brightness(95%) contrast(87%);
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .social-icons a:hover img {
   transform: scale(1.2);
-  filter: invert(50%) sepia(65%) saturate(900%) hue-rotate(114deg) brightness(105%) contrast(100%);
 }
 
 /* Footer */

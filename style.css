@@ -84,6 +84,33 @@ nav a:hover {
   white-space: pre-line;
 }
 
+.disclaimer-info {
+  background-color: #f8f9fa;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.disclaimer-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.disclaimer-info h2 {
+  color: #2c5c3d;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.disclaimer-info p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 /* Map Section */
 .map-section {
   padding: 60px 20px;

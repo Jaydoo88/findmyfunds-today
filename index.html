@@ -180,12 +180,45 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <p><strong>Is this legit?</strong> Yes! We only link to official government websites.</p>
-    <p><strong>What’s the catch?</strong> None — we just hope you’ll donate if it helped.</p>
-    <p><strong>Can I help others?</strong> Please share the site with friends and family!</p>
-  </section>
+  <section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      Is this legit? 🤔
+    </div>
+    <div class="faq-answer">
+      Yes! We only link to official government websites. Every state has an official unclaimed property program, and we simply help you navigate to the right place.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      What’s the catch? 💰
+    </div>
+    <div class="faq-answer">
+      None — we just hope you'll donate if it helped. This service is completely free. We make no money from your claims and don't charge any fees.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      Can I help others? 🤝
+    </div>
+    <div class="faq-answer">
+      Please share the site with friends and family! Many people don't know about unclaimed property programs, and you could help them recover money they didn’t even know they had.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      How much money is typically found? 📊
+    </div>
+    <div class="faq-answer">
+      Amounts vary widely — from small utility deposits of $20–50 to large insurance payouts of thousands of dollars. The average claim is around $300, but many people find multiple claims.
+    </div>
+  </div>
+</section>
   
 <section class="social-share">
   <h2>Share This Site</h2>
@@ -255,6 +288,20 @@ const testimonialObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('.testimonial').forEach(t => testimonialObserver.observe(t));
+</script>
+<script>
+  function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const allAnswers = document.querySelectorAll('.faq-answer');
+
+    allAnswers.forEach(ans => {
+      if (ans !== answer) {
+        ans.classList.remove('active');
+      }
+    });
+
+    answer.classList.toggle('active');
+  }
 </script>
 </body>
 </html>

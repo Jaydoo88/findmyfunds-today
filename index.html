@@ -212,6 +212,49 @@
   <footer>
     <p>FindMyFunds.today is not affiliated with any state government.</p>
   </footer>
+<script>
+// Fade-in on scroll
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px 0px -30px 0px'
+};
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Count up animation
+function animateValue(el, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    el.textContent = '$' + Math.floor(progress * (end - start) + start).toLocaleString();
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const testimonialObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const amountEl = entry.target.querySelector('.testimonial-amount');
+      const finalAmount = parseInt(amountEl.getAttribute('data-amount'), 10);
+      animateValue(amountEl, 0, finalAmount, 1500);
+      testimonialObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.testimonial').forEach(t => testimonialObserver.observe(t));
+</script>
 </body>
 </html>

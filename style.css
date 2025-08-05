@@ -87,6 +87,7 @@ nav a:hover {
   position: relative;
   max-width: 650px;
   margin: 0 auto 40px;
+  transform: translateX(-20px); /* 👈 shifts it 20px to the left */
 }
 
 .hero-check-image {

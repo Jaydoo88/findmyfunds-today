@@ -58,34 +58,34 @@ nav a:hover {
   color: #bfffd9;
 }
 
-/* Hero Section */
+/* HERO SECTION */
 .hero {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 80px 20px;
+  padding: 80px 40px;
   background-color: #f8f9fa;
 }
 
-/* Left Column: Check + Text */
+/* LEFT SIDE: CHECK + TEXT */
 .hero-left {
-  flex: 0 0 600px;
+  flex: 1;
   max-width: 600px;
+  padding-right: 20px;
   text-align: left;
-  padding-right: 40px;
 }
 
-/* Check Image */
+/* CHECK IMAGE */
 .hero-check-wrapper img {
-  width: 100%;
   max-width: 500px;
+  width: 100%;
   height: auto;
   display: block;
   margin-bottom: 30px;
 }
 
-/* Headline and Subtext */
+/* HEADLINE */
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -94,6 +94,7 @@ nav a:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
+/* SUBTEXT */
 .hero p {
   font-size: 1.2rem;
   color: #2d8659;
@@ -102,20 +103,33 @@ nav a:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
-/* Right Column: Girl */
+/* CTA BUTTON */
+.hero button {
+  font-size: 1rem;
+  background-color: #2d8659;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* RIGHT SIDE: WOMAN IMAGE */
 .hero-right {
-  flex: 0 0 500px;
+  flex: 1;
   max-width: 500px;
+  text-align: center;
 }
 
 .hero-right img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
+  object-fit: contain;
 }
 
-/* Responsive */
+/* RESPONSIVE STYLING */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column;
@@ -123,8 +137,7 @@ nav a:hover {
     padding: 60px 20px;
   }
 
-  .hero-left,
-  .hero-right {
+  .hero-left, .hero-right {
     max-width: 100%;
     padding: 0;
   }
@@ -143,12 +156,10 @@ nav a:hover {
     margin: 0 auto 20px;
   }
 
-  .hero h1,
-  .hero p {
+  .hero h1, .hero p {
     text-align: center;
   }
 }
-
 .disclaimer-info {
   background-color: #f8f9fa;
   padding: 30px 20px;

@@ -65,22 +65,24 @@ nav a:hover {
   background-size: cover;
   background-position: center top;
   padding: 140px 20px 160px 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
 }
 
 /* Check Wrapper */
 .hero-check-wrapper {
   position: relative;
   max-width: 650px;
-  margin: 0 auto 40px;
-  transform: translateX(-60px); /* subtle left shift */
+  margin: 0 0 40px 40px; /* Left shift with margin */
 }
 
-.hero-check-wrapper {
-  position: relative;
-  max-width: 650px;
-  margin: 0 auto 40px;
-  transform: translateX(-120px); /* Moved farther left to avoid overlapping hand */
+/* Check Image */
+.hero-check-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Overlay Text on Check */
@@ -105,14 +107,13 @@ nav a:hover {
   color: #444;
 }
 
-/* Headline and Subtext */
+/* Hero Text */
 .hero-text {
-  text-align: center;
+  text-align: left;
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: 40px;
 }
 
-/* Headline */
 .hero h1 {
   font-size: 2.75rem;
   font-weight: 700;
@@ -120,33 +121,31 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-/* Subtext */
 .hero p {
   font-size: 1.25rem;
   color: #2d8659;
-  margin: 0 auto 1.5rem auto;
-  max-width: 600px;
+  margin-bottom: 1.5rem;
   line-height: 1.5;
   white-space: pre-line;
 }
 
-/* Mobile Responsiveness */
+/* Responsive Layout */
 @media (max-width: 768px) {
-  .hero-check-wrapper {
-    transform: none;
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-check-wrapper,
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
   }
 
   .check-overlay {
     top: 30%;
     left: 10%;
-    transform: none;
-    text-align: left;
-  }
-
-  .hero-text {
     text-align: center;
-    transform: none;
-    padding: 0 10px;
   }
 }
 

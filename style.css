@@ -83,6 +83,39 @@ nav a:hover {
   line-height: 1.5;
   white-space: pre-line;
 }
+.hero-check-wrapper {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.hero-check-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.check-overlay {
+  position: absolute;
+  top: 24%;
+  left: 12%;
+  text-align: left;
+  color: #1a1a1a;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.check-amount {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #2c5c3d;
+}
+
+.check-caption {
+  font-size: 1rem;
+  margin-top: 4px;
+  color: #444;
+}
 
 .disclaimer-info {
   background-color: #f8f9fa;

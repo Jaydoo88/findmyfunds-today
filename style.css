@@ -58,7 +58,7 @@ nav a:hover {
   color: #bfffd9;
 }
 
-/* HERO SECTION */
+/* Hero Section */
 .hero {
   position: relative;
   background-image: url("assets/money-background.jpg");
@@ -67,26 +67,25 @@ nav a:hover {
   padding: 140px 20px 160px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start; /* Align content to the left */
 }
 
-/* CHECK WRAPPER */
+/* Check Wrapper */
 .hero-check-wrapper {
   position: relative;
   max-width: 650px;
-  margin-bottom: 30px;
-  transform: translateX(-120px); /* Shift left to center check in open space */
+  margin: 0 0 40px 40px; /* Left shift with margin */
 }
 
-/* CHECK IMAGE */
-.hero-check-wrapper img {
+/* Check Image */
+.hero-check-image {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* TEXT OVERLAY ON CHECK */
+/* Overlay Text on Check */
 .check-overlay {
   position: absolute;
   top: 24%;
@@ -108,62 +107,45 @@ nav a:hover {
   color: #444;
 }
 
-/* HEADLINE AND CTA TEXT */
+/* Hero Text */
 .hero-text {
+  text-align: left;
   max-width: 600px;
-  margin-top: 20px;
+  margin-left: 40px;
 }
 
-.hero-text h1 {
+.hero h1 {
   font-size: 2.75rem;
   font-weight: 700;
   color: #2d8659;
   margin-bottom: 1rem;
-  font-family: 'Fredoka', sans-serif;
 }
 
-.hero-text p {
+.hero p {
   font-size: 1.25rem;
   color: #2d8659;
-  margin: 0 auto 1.5rem auto;
+  margin-bottom: 1.5rem;
   line-height: 1.5;
   white-space: pre-line;
 }
 
-.hero-text button {
-  font-size: 1rem;
-  background-color: #2d8659;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* RESPONSIVE DESIGN */
+/* Responsive Layout */
 @media (max-width: 768px) {
-  .hero-check-wrapper {
-    transform: none;
-    margin-bottom: 20px;
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-check-wrapper,
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
   }
 
   .check-overlay {
     top: 30%;
     left: 10%;
-    text-align: left;
-  }
-
-  .hero-text {
-    padding: 0 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
+    text-align: center;
   }
 }
 .disclaimer-info {

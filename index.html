@@ -53,18 +53,24 @@
     </nav>
   </header>
 
- <!-- Hero Section -->
-  <section class="hero">
-    <div class="money-starburst">
-   <span class="no-bold">$12,153,276,408+</span><br>in lost property!
-</div>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-check-wrapper">
+    <img src="/assets/blank-check.jpg" alt="Blank check image" class="hero-check-image" />
 
-    <h1>Find What’s Rightfully Yours</h1>
-    <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
-    <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
-      Click Your State to Start Searching
-    </button>
-  </section>
+    <div class="check-overlay">
+      <span id="animatedAmount" class="check-amount">$12,153,276,408+</span>
+      <p class="check-caption">in unclaimed property held by state treasuries</p>
+    </div>
+  </div>
+
+  <h1>Find What’s Rightfully Yours</h1>
+  <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
+
+  <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
+    Click Your State to Start Searching
+  </button>
+</section>
 
   <section class="disclaimer-info">
   <div class="disclaimer-container">
@@ -304,6 +310,24 @@ document.querySelectorAll('.testimonial').forEach(t => testimonialObserver.obser
 
     answer.classList.toggle('active');
   }
+</script>
+<script>
+  const el = document.getElementById('animatedAmount');
+  const target = 12153276408;
+  let current = 0;
+  const duration = 2000; // in ms
+  const frameRate = 24;
+
+  const increment = target / (duration / (1000 / frameRate));
+
+  const counter = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(counter);
+    }
+    el.textContent = '$' + Math.floor(current).toLocaleString() + '+';
+  }, 1000 / frameRate);
 </script>
 </body>
 </html>

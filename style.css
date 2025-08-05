@@ -96,10 +96,26 @@ nav a:hover {
   pointer-events: none;
 }
 
+/* Name Field on Check */
+.check-name {
+  position: absolute;
+  top: 15%;     /* Adjust this to line up with the name line */
+  left: 16%;    /* Adjust this to align horizontally */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  pointer-events: none;
+}
+
+/* Amount Field in Dollar Box */
 .check-amount {
-  font-size: 1.85rem;
+  position: absolute;
+  top: 15%;
+  right: 15%;   /* Adjust this to place inside the box */
+  font-size: 1.5rem;
   font-weight: 700;
   color: #2c5c3d;
+  pointer-events: none;
 }
 
 .check-caption {

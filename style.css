@@ -99,8 +99,8 @@ nav a:hover {
 /* Name Field on Check */
 .check-name {
   position: absolute;
-  top: 10%;     /* Adjust this to line up with the name line */
-  left: 16%;    /* Adjust this to align horizontally */
+  top: 40px;     /* Adjust this to line up with the name line */
+  left: 70px;    /* Adjust this to align horizontally */
   font-size: 1.5rem;
   font-weight: 600;
   color: #2c5c3d;
@@ -110,8 +110,8 @@ nav a:hover {
 /* Amount Field in Dollar Box */
 .check-amount {
   position: absolute;
-  top: 10%;
-  right: 15%;   /* Adjust this to place inside the box */
+  top: 40px;
+  right: 100px;   /* Adjust this to place inside the box */
   font-size: 1.5rem;
   font-weight: 700;
   color: #2c5c3d;

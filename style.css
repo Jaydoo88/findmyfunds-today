@@ -60,115 +60,91 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  position: relative;
-  background-image: url("assets/money-background.jpg");
-  background-size: cover;
-  background-position: center top;
-  padding: 140px 40px 160px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 80px 20px;
+  background-color: #f8f9fa;
 }
 
 /* Left Column: Check + Text */
 .hero-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 650px;
-}
-
-/* Check Wrapper */
-.hero-check-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 40px;
+  flex: 0 0 600px;
+  max-width: 600px;
+  text-align: left;
+  padding-right: 40px;
 }
 
 /* Check Image */
-.hero-check-image {
+.hero-check-wrapper img {
   width: 100%;
+  max-width: 500px;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 30px;
 }
 
-/* Overlay Text on Check */
-.check-overlay {
-  position: absolute;
-  top: 24%;
-  left: 12%;
-  text-align: left;
-  color: #1a1a1a;
-  font-family: 'Fredoka', sans-serif;
-}
-
-.check-amount {
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: #2c5c3d;
-}
-
-.check-caption {
-  font-size: 1rem;
-  margin-top: 4px;
-  color: #444;
-}
-
-/* Hero Text */
-.hero-text {
-  text-align: left;
-  max-width: 600px;
-}
-
+/* Headline and Subtext */
 .hero h1 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #2d8659;
   margin-bottom: 1rem;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #2d8659;
   margin-bottom: 1.5rem;
   line-height: 1.5;
-  white-space: pre-line;
+  font-family: 'Fredoka', sans-serif;
 }
 
-/* CTA Button */
-.hero button {
-  background-color: #2d8659;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
+/* Right Column: Girl */
+.hero-right {
+  flex: 0 0 500px;
+  max-width: 500px;
 }
 
-/* Responsive Layout */
+.hero-right img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column;
-    align-items: center;
-    padding: 100px 20px;
     text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+    padding: 0;
   }
 
   .hero-left {
-    align-items: center;
+    order: 2;
   }
 
-  .check-overlay {
-    top: 30%;
-    left: 10%;
-    text-align: center;
+  .hero-right {
+    order: 1;
+    margin-bottom: 40px;
   }
 
-  .hero-text {
+  .hero-check-wrapper img {
+    max-width: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .hero h1,
+  .hero p {
     text-align: center;
   }
 }

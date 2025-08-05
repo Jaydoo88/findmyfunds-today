@@ -76,11 +76,11 @@ nav a:hover {
   transform: translateX(-60px); /* subtle left shift */
 }
 
-.hero-check-image {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.hero-check-wrapper {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  transform: translateX(-120px); /* Moved farther left to avoid overlapping hand */
 }
 
 /* Overlay Text on Check */

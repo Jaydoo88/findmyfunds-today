@@ -101,7 +101,7 @@ nav a:hover {
   position: absolute;
   top: 75px;     /* Adjust this to line up with the name line */
   left: 170px;    /* Adjust this to align horizontally */
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #2c5c3d;
   pointer-events: none;
@@ -111,7 +111,7 @@ nav a:hover {
 .check-amount {
   position: absolute;
   top: 75px;
-  right: 25px;   /* Adjust this to place inside the box */
+  right: 50px;   /* Adjust this to place inside the box */
   font-size: 1.4rem;
   font-weight: 700;
   color: #2c5c3d;

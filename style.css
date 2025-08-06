@@ -119,8 +119,8 @@ nav a:hover {
 }
 .check-caption {
   position: absolute;
-  top: 175px;
-  left: 12px;
+  top: 165px;
+  left: 30px;
   font-size: 1rem;
   font-weight: 500;
   color: #2c5c3d;

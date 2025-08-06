@@ -117,7 +117,15 @@ nav a:hover {
   color: #2c5c3d;
   pointer-events: none;
 }
-
+/* Wording under name */
+.funds-note {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c5c3d;
+  margin-top: 12px;
+  font-family: 'Fredoka', sans-serif;
+}
 .check-caption {
   font-size: 1rem;
   margin-top: 4px;

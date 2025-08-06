@@ -99,8 +99,8 @@ nav a:hover {
 /* Name Field on Check */
 .check-name {
   position: absolute;
-  top: 45px;     /* Adjust this to line up with the name line */
-  left: 80px;    /* Adjust this to align horizontally */
+  top: 35px;     /* Adjust this to line up with the name line */
+  left: 70px;    /* Adjust this to align horizontally */
   font-size: 1.4rem;
   font-weight: 600;
   color: #2c5c3d;

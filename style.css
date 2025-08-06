@@ -110,8 +110,8 @@ nav a:hover {
 /* Amount Field in Dollar Box */
 .check-amount {
   position: absolute;
-  top: 42px;
-  right: 90px;   /* Adjust this to place inside the box */
+  top: 75px;
+  right: 190px;   /* Adjust this to place inside the box */
   font-size: 1.4rem;
   font-weight: 700;
   color: #2c5c3d;

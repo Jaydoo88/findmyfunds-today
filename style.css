@@ -117,19 +117,15 @@ nav a:hover {
   color: #2c5c3d;
   pointer-events: none;
 }
-/* Wording under name */
-.funds-note {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2c5c3d;
-  margin-top: 12px;
-  font-family: 'Fredoka', sans-serif;
-}
 .check-caption {
+  position: absolute;
+  top: 75px;
+  left: 12px;
   font-size: 1rem;
-  margin-top: 4px;
-  color: #444;
+  font-weight: 500;
+  color: #2c5c3d;
+  font-family: 'Fredoka', sans-serif;
+  pointer-events: none;
 }
 
 /* Hero Text */

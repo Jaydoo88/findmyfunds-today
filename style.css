@@ -120,10 +120,10 @@ nav a:hover {
 .check-caption {
   position: absolute;
   top: 165px;
-  left: 30px;
+  left: 50px;
   font-size: 1rem;
-  font-weight: 500;
-  color: #2c5c3d;
+  font-weight: 700;
+  color: #c62828;
   font-family: 'Fredoka', sans-serif;
   pointer-events: none;
 }

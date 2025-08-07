@@ -768,3 +768,29 @@ footer {
     margin-top: 10px;
   }
 }
+@media (max-width: 768px) {
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-check-wrapper {
+    margin-left: 0;
+    text-align: center;
+    position: relative; /* ✅ KEEP THIS on mobile too */
+  }
+
+  .check-name {
+    top: 20%; /* or adjust as needed */
+    left: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .check-amount {
+    top: 30%; /* or adjust as needed */
+    left: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

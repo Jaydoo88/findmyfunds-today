@@ -58,125 +58,78 @@ nav a:hover {
   color: #bfffd9;
 }
 
-/* Hero Section */
+/* =======================
+   Hero Section (image-only)
+   ======================= */
 .hero {
   position: relative;
   background-image: url("assets/money-background.jpg");
   background-size: cover;
   background-position: center top;
-  padding: 140px 20px 160px 20px;
+  padding: 120px 20px 140px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;     /* center the check + text */
+  text-align: center;      /* center text under the check */
 }
 
-/* Check Wrapper */
+/* Check Wrapper (centered above headline) */
 .hero-check-wrapper {
-  position: relative;
-  width: 600px; /* 👈 fixed size to control check image */
-  margin: 0 0 40px 500px; /* left shift */
+  width: min(90vw, 720px);
+  margin: 0 auto 24px;     /* centers and adds space below the image */
 }
 
-/* Check Image */
 .hero-check-image {
-  width: 100%; /* fills 400px container */
+  width: 100%;
   height: auto;
+  display: block;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Overlay Text on Check */
-.check-overlay {
-  position: absolute;
-  top: 24%;
-  left: 12%;
-  text-align: left;
-  color: #1a1a1a;
-  font-family: 'Fredoka', sans-serif;
-  pointer-events: none;
-}
-
-/* Name Field on Check */
-.check-name {
-  position: absolute;
-  top: 75px;     /* Adjust this to line up with the name line */
-  left: 170px;    /* Adjust this to align horizontally */
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c5c3d;
-  pointer-events: none;
-}
-
-/* Amount Field in Dollar Box */
-.check-amount {
-  position: absolute;
-  top: 75px;
-  right: 50px;   /* Adjust this to place inside the box */
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #2c5c3d;
-  pointer-events: none;
-}
-.check-caption {
-  position: absolute;
-  top: 165px;
-  left: 50px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #c62828;
-  font-family: 'Fredoka', sans-serif;
-  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Hero Text */
 .hero h1 {
-  font-size: 2.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   color: #2d8659;
-  margin: 0 0 1rem 525px;
-  max-width: 600px;
-  text-align: left;
+  margin: 0 0 1rem 0;
+  max-width: 720px;
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: #2d8659;
-  margin: 0 0 1.5rem 525px;
-  max-width: 600px;
+  margin: 0 0 1.5rem 0;
+  max-width: 720px;
   line-height: 1.5;
-  text-align: left;
 }
 
-.hero button.primary {
-  margin-left: 625px;
+button.primary {
+  background-color: #4AA886;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Layout */
+button.primary:hover {
+  background-color: #3A866C;
+}
+
+/* Smaller top/bottom padding on mobile */
 @media (max-width: 768px) {
   .hero {
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-check-wrapper {
-    margin: 0 0 30px 0;
-    width: 90%;
-    max-width: 400px;
-  }
-
-  .hero h1,
-  .hero p,
-  .hero button.primary {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .check-overlay {
-    top: 30%;
-    left: 10%;
-    text-align: center;
+    padding: 100px 15px 120px;
   }
 }
+
+/* =======================
+   Disclaimer
+   ======================= */
 .disclaimer-info {
   background-color: #f8f9fa;
   padding: 30px 20px;
@@ -204,7 +157,7 @@ nav a:hover {
   line-height: 1.5;
 }
 
-/* Stylized Warning Box Inside Disclaimer */
+/* Stylized Warning Box */
 .warning-box {
   background: #fff8e1;
   border-left: 5px solid #f39c12;
@@ -228,7 +181,9 @@ nav a:hover {
   color: #f39c12;
 }
 
-/* Map Section */
+/* =======================
+   Map Section
+   ======================= */
 .map-section {
   padding: 60px 20px;
   text-align: center;
@@ -241,34 +196,57 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
-button.primary {
+/* Unified Grid for Desktop and Mobile */
+.state-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 across desktop */
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto 0;
+  justify-items: center;
+}
+
+.state-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
   background-color: #4AA886;
   color: #fff;
-  border: none;
-  padding: 12px 28px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  border: 2px solid #2c5c3d;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button.primary:hover {
-  background-color: #3A866C;
+.state-circle:hover {
+  background-color: #2f6f4e;
+  transform: scale(1.05);
 }
 
-/* Map Section */
-.map-section {
-  padding: 60px 20px;
+/* Mobile breakpoints for grid */
+@media (max-width: 768px) {
+  .state-grid-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .state-grid-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .state-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
 }
 
-.map-image {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Testimonial Section */
+/* =======================
+   Testimonials
+   ======================= */
 .testimonial-section {
   background-color: #f4fdf7;
   padding: 3rem 1rem;
@@ -283,7 +261,6 @@ button.primary:hover {
   font-family: 'Fredoka', sans-serif;
 }
 
-/* Testimonial Grid – 2 across on desktop, stacked on mobile */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -294,7 +271,6 @@ button.primary:hover {
   justify-content: center;
 }
 
-/* Individual Testimonial Card */
 .testimonial {
   background: white;
   padding: 30px;
@@ -321,26 +297,27 @@ button.primary:hover {
   color: #2d8659;
 }
 
-/* Animation (optional) */
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease-out;
 }
-
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Mobile: stack cards 1 per row */
+/* Mobile: stack testimonial cards */
 @media (max-width: 768px) {
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Check Proof Section */
+/* =======================
+   Check Proof Section
+   ======================= */
 .check-proof {
   text-align: center;
 }
@@ -372,11 +349,13 @@ button.primary:hover {
   margin-top: 0.5rem;
 }
 
-/* Donations */
+/* =======================
+   Donations
+   ======================= */
 .donations {
   padding: 60px 20px;
   text-align: center;
-  background-color: #ffffff; /* Changed from light green to white */
+  background-color: #ffffff;
 }
 
 .donations h2 {
@@ -407,22 +386,9 @@ button.primary:hover {
   background-color: #3A866C;
 }
 
-/* FAQ Section */
-.faq {
-  background-color: #f4fdf7;        /* optional: match section styling */
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 0 auto;                   /* centers the whole section horizontally */
-  text-align: left;                /* keeps the questions/answers left-aligned */
-}
-
-.faq h2 {
-  text-align: center;              /* centers the FAQ title only */
-  color: #2d8659;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Fredoka', sans-serif;
-}
+/* =======================
+   FAQ Section
+   ======================= */
 .faq-section {
   background-color: #f4fdf7;
   padding: 60px 20px;
@@ -472,7 +438,9 @@ button.primary:hover {
   display: block;
 }
 
-/* Social Share Section */
+/* =======================
+   Social Share
+   ======================= */
 .social-share {
   background-color: #ffffff;
   padding: 3rem 1rem;
@@ -481,7 +449,7 @@ button.primary:hover {
   margin-top: 3rem;
 }
 
-.social-share h3 {
+.social-share h2 {
   color: #2d8659;
   font-size: 1.8rem;
   font-family: 'Fredoka', sans-serif;
@@ -506,7 +474,9 @@ button.primary:hover {
   transform: scale(1.2);
 }
 
-/* Footer */
+/* =======================
+   Footer
+   ======================= */
 footer {
   background-color: #ffffff;
   color: #2d8659;
@@ -514,283 +484,4 @@ footer {
   padding: 20px;
   margin-top: 40px;
   font-size: 0.9rem;
-}
-
-/* Unified Grid for Desktop and Mobile */
-.state-grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 across desktop */
-  gap: 20px;
-  max-width: 800px;
-  margin: 40px auto 0;
-  justify-items: center;
-}
-
-.state-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background-color: #4AA886;
-  color: #fff;
-  border: 2px solid #2c5c3d;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.state-circle:hover {
-  background-color: #2f6f4e;
-  transform: scale(1.05);
-}
-
-/* Mobile: still 5 across but scaled */
-@media (max-width: 768px) {
-  .state-grid-wrapper {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .state-grid-wrapper {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Mobile Responsive Layout */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .column {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .state-circle {
-    width: 60px;
-    height: 60px;
-    font-size: 14px;
-  }
-}
-
-/* Hero Money Bubble Burst */
-.money-starburst {
-  position: absolute;
-  top: 50%;
-  left: calc(50% - 600px);
-  transform: translate(-50%, -50%) rotate(-3deg);
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(145deg, #4AA886, #2d7059);
-  clip-path: polygon(
-    50% 0%, 60% 30%, 100% 30%, 70% 50%,
-    100% 70%, 60% 70%, 50% 100%, 40% 70%,
-    0% 70%, 30% 50%, 0% 30%, 40% 30%
-  );
-  color: white;
-  font-weight: 400;
-  font-size: 1.4rem;
-  text-align: center;
-  line-height: 1.4;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  word-break: break-word;
-  z-index: 20;
-
-  /* 💠 Bevel / Embossed Look */
-  box-shadow:
-    6px 6px 12px rgba(0, 0, 0, 0.3),
-    -6px -6px 12px rgba(255, 255, 255, 0.15),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.2),
-    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
-  border: 2px solid #2d7059;
-}
-@media (max-width: 768px) {
-  .money-starburst {
-    position: absolute;
-    bottom: 30px;
-    left: 10px;
-    width: 140px;
-    height: 140px;
-    font-size: 0.9rem;
-    transform: none;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.2),
-      inset 0 2px 4px rgba(255, 255, 255, 0.12),
-      inset 0 -3px 4px rgba(0, 0, 0, 0.15);
-  }
-}
-.money-starburst .no-bold {
-  font-weight: 400 !important;
-}
-/* 📱 Additional Mobile Enhancements */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 0 12px;
-  }
-
-  .logo-bar {
-    flex-direction: column;
-    padding: 15px 10px;
-  }
-
-  .logo {
-    max-width: 80%;
-  }
-
-  header nav a {
-    display: inline-block;
-    margin: 10px 10px;
-    font-size: 0.95rem;
-  }
-
-  .hero {
-  padding: 100px 15px 200px 15px; /* Add more bottom space */
-}
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .map-image {
-    width: 100%;
-  }
-
-  .map-section {
-    padding: 40px 15px;
-  }
-
-  .donations {
-    padding: 40px 15px;
-  }
-
-  .donations h2,
-  .map-section h2,
-  .faq h2,
-  .social-share h3 {
-    font-size: 1.6rem;
-  }
-
-  .donations p,
-  .faq p,
-  .testimonial-section p,
-  .check-proof p {
-    font-size: 1rem;
-  }
-
-  .testimonial-section {
-    padding: 2rem 1rem;
-  }
-
-  .check-proof h4 {
-    font-size: 1.2rem;
-  }
-
-  .check-image {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 15px;
-  }
-
-  .social-icons {
-    gap: 16px;
-  }
-
-  .state-circle {
-    width: 50px;
-    height: 50px;
-    font-size: 13px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 160px 15px 80px 15px; /* pushes text down, but trims bottom */
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-
-  .money-starburst {
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    width: 110px;
-    height: 110px;
-    font-size: 0.45rem;
-    line-height: 1.05;
-    padding: 6px 4px;
-    text-align: center;
-    word-break: break-word;
-    clip-path: polygon(
-      50% 0%, 60% 30%, 100% 30%, 70% 50%,
-      100% 70%, 60% 70%, 50% 100%, 40% 70%,
-      0% 70%, 30% 50%, 0% 30%, 40% 30%
-    );
-    z-index: 3;
-  }
-
-  .hero h1,
-  .hero p {
-    position: relative;
-    z-index: 1;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-check-wrapper {
-    margin-left: 0;
-    text-align: center;
-    position: relative; /* ✅ KEEP THIS on mobile too */
-  }
-
-  .check-name {
-    top: 20%; /* or adjust as needed */
-    left: 15%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .check-amount {
-    top: 30%; /* or adjust as needed */
-    left: 75%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
 }

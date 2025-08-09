@@ -75,7 +75,7 @@ nav a:hover {
 
 /* Check Wrapper (centered above headline) */
 .hero-check-wrapper {
-  width: min(90vw, 520px);
+  width: min(90vw, 720px);
   margin: 0 auto 24px;     /* centers and adds space below the image */
 }
 

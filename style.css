@@ -210,6 +210,100 @@ button.primary:hover { background-color: #3A866C; }
 .faq-answer.active { display: block; }
 
 /* =======================
+   How It Works (Accordion)
+   ======================= */
+.howitworks-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.howitworks-section h2 {
+  text-align: center;
+  color: #2d8659;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.howitworks-item {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e6efe9;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.howitworks-item > summary {
+  list-style: none;              /* hide default arrow */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  font-weight: 600;
+  color: #2d8659;
+  background: #f6fbf8;
+  position: relative;
+}
+
+/* Custom disclosure arrow */
+.howitworks-item > summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #2d8659;
+  border-bottom: 2px solid #2d8659;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 16px;
+  transition: transform 0.2s ease;
+}
+
+.howitworks-item[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #4AA886;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.howitworks-content {
+  padding: 16px 18px 18px;
+  color: #2d8659;
+  line-height: 1.55;
+  background: #ffffff;
+}
+
+.howitworks-cta {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.howitworks-note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #2d8659;
+  text-align: center;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .howitworks-section { padding: 40px 16px; }
+  .howitworks-section h2 { font-size: 1.7rem; }
+}
+
+/* =======================
    Social Share
    ======================= */
 .social-share {

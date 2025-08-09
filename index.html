@@ -7,13 +7,13 @@
 
   <!-- Performance: preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts (still used by headings/buttons etc.) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Favicon (optional) -->
   <link rel="icon" href="/assets/favicon.ico">
 
-  <!-- Your main stylesheet -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Primary Meta Tags -->
@@ -34,13 +34,6 @@
   <meta name="twitter:description" content="Easily search for unclaimed funds in every U.S. state. Billions of dollars are waiting — find what's rightfully yours.">
   <meta name="twitter:image" content="https://findmyfunds.today/assets/findmyfunds-logo.png">
 
-  <!-- Tiny hero-specific CSS (safe to move to style.css) -->
-  <style>
-    .hero-check-wrapper { max-width: 720px; margin: 0 auto; }
-    .hero-check-image { width: 100%; height: auto; display: block; }
-    .hero-total { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; }
-  </style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY61F5CJ26"></script>
   <script>
@@ -54,7 +47,7 @@
 
   <!-- Logo Top Bar -->
   <div class="logo-bar">
-    <img src="assets/findmyfunds-logo.png" alt="FindMyFunds Logo" class="logo" loading="lazy">
+    <img src="/assets/findmyfunds-logo.png" alt="FindMyFunds Logo" class="logo" loading="lazy">
   </div>
 
   <!-- Navigation Bar -->
@@ -66,27 +59,26 @@
     </nav>
   </header>
 
-  <!-- Hero (image-only check) -->
+  <!-- HERO (image + text block shifted left) -->
   <section class="hero">
-    <div class="hero-check-wrapper">
-      <img
-        src="/assets/check.png"
-        class="hero-check-image"
-        loading="lazy"
-        alt="Sample check showing 'Pay to the order of Your Name' with amount $12,153 and the caption 'Over $70 billion in unclaimed property is waiting — is any of it yours?'"
-      />
+    <div class="hero-inner">
+      <div class="hero-block">
+        <img
+          src="/assets/check.png"
+          class="hero-check-image"
+          loading="lazy"
+          alt="Sample check showing 'Pay to the order of Your Name' and amount, with caption about unclaimed property."
+        />
+        <h1>Find What’s Rightfully Yours</h1>
+        <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
+        <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
+          Click Your State to Start Searching
+        </button>
+        <p class="hero-total">
+          People have found <strong id="animatedAmount">$0+</strong> using these official links.
+        </p>
+      </div>
     </div>
-
-    <h1>Find What’s Rightfully Yours</h1>
-    <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
-
-    <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
-      Click Your State to Start Searching
-    </button>
-
-    <p class="hero-total">
-      People have found <strong id="animatedAmount">$0+</strong> using these official links.
-    </p>
   </section>
 
   <!-- Disclaimer Section -->
@@ -190,7 +182,7 @@
   <div class="check-proof">
     <h2>✔️ Official Checks Like This Are Issued Every Day</h2>
     <p>This real check shows money returned by the State of California.</p>
-    <img src="assets/check.jpg" alt="State of California Unclaimed Property Check" class="check-image" loading="lazy">
+    <img src="/assets/check.jpg" alt="State of California Unclaimed Property Check" class="check-image" loading="lazy">
     <p class="disclaimer">*Personal info redacted. Example shown with permission.</p>
   </div>
 
@@ -243,19 +235,19 @@
     <h2>Share This Site</h2>
     <div class="social-icons">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
-        <img src="assets/facebook.svg" alt="Facebook" loading="lazy" />
+        <img src="/assets/facebook.svg" alt="Facebook" loading="lazy" />
       </a>
       <a href="https://twitter.com/intent/tweet?url=https://findmyfunds.today&text=Found%20unclaimed%20money%20links%20by%20state%20%E2%80%94%20check%20yours!" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
-        <img src="assets/x.svg" alt="X (formerly Twitter)" width="32" height="32" loading="lazy">
+        <img src="/assets/x.svg" alt="X (formerly Twitter)" width="32" height="32" loading="lazy">
       </a>
       <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
-        <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
+        <img src="/assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
       </a>
       <a href="https://api.whatsapp.com/send?text=Check%20FindMyFunds:%20https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
-        <img src="assets/whatsapp.svg" alt="WhatsApp" loading="lazy" />
+        <img src="/assets/whatsapp.svg" alt="WhatsApp" loading="lazy" />
       </a>
       <a href="mailto:info@findmyfunds.today" aria-label="Email us">
-        <img src="assets/email.svg" alt="Email us" width="32" height="32" loading="lazy">
+        <img src="/assets/email.svg" alt="Email us" width="32" height="32" loading="lazy">
       </a>
     </div>
   </section>
@@ -312,7 +304,7 @@
     // Big animated total in hero
     const el = document.getElementById('animatedAmount');
     if (el) {
-      const target = 153276408; // adjust as needed
+      const target = 153276408; // <- updated smaller total
       let current = 0;
       const duration = 2000; // ms
       const frameRate = 24;

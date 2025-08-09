@@ -4,9 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FindMyFunds | Track It. Claim It. It’s Yours.</title>
-  
+
+  <!-- Performance: preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (optional—replace path if needed) -->
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <!-- Your main stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Primary Meta Tags -->
@@ -27,21 +34,43 @@
   <meta name="twitter:description" content="Easily search for unclaimed funds in every U.S. state. Billions of dollars are waiting — find what's rightfully yours.">
   <meta name="twitter:image" content="https://findmyfunds.today/assets/findmyfunds-logo.png">
 
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GY61F5CJ26"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Minimal inline CSS to ensure the check overlay behaves on mobile.
+       You can move this block into style.css if you prefer. -->
+  <style>
+    .hero-check-wrapper { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-check-image { width: 100%; height: auto; display: block; }
+    .check-name, .check-amount, .check-caption {
+      position: absolute; left: 10%; right: 10%; pointer-events: none;
+      color: #1a1a1a; font-family: 'Fredoka', sans-serif;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+    }
+    /* Tweak these positions to taste; they’re mobile-first */
+    .check-name   { top: 22%; font-size: clamp(14px, 3.6vw, 20px); font-weight: 600; }
+    .check-amount { top: 36%; font-size: clamp(22px, 6.2vw, 36px); font-weight: 700; color: #2c5c3d; }
+    .check-caption{ top: 68%; font-size: clamp(12px, 3.2vw, 16px); color: #444; }
+    @media (min-width: 720px) {
+      .check-name   { top: 20%; left: 12%; right: 12%; }
+      .check-amount { top: 33%; left: 12%; right: 12%; }
+      .check-caption{ top: 64%; left: 12%; right: 12%; }
+    }
+    /* Simple helper for the animated total line */
+    .hero-total { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; }
+  </style>
 
-  gtag('config', 'G-GY61F5CJ26');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY61F5CJ26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GY61F5CJ26');
+  </script>
 </head>
 <body>
 
   <!-- Logo Top Bar -->
   <div class="logo-bar">
-    <img src="assets/findmyfunds-logo.png" alt="FindMyFunds Logo" class="logo">
+    <img src="assets/findmyfunds-logo.png" alt="FindMyFunds Logo" class="logo" loading="lazy">
   </div>
 
   <!-- Navigation Bar -->
@@ -53,280 +82,267 @@
     </nav>
   </header>
 
-<section class="hero">
-  <div class="hero-check-wrapper">
-    <img src="/assets/blank-check.jpg" alt="Blank check image" class="hero-check-image" />
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-check-wrapper">
+      <img src="/assets/blank-check.jpg" alt="Sample check background" class="hero-check-image" loading="lazy" />
 
-    <span class="check-name">Your Name</span>
-    <span class="check-amount">$12,153</span>
-    <span class="check-caption">Over $70 billion in unclaimed property is waiting — is any of it yours?</span>
-  </div>
+      <span class="check-name" aria-hidden="true">Your Name</span>
+      <span class="check-amount" aria-hidden="true">$12,153</span>
+      <span class="check-caption" aria-hidden="true">Over $70 billion in unclaimed property is waiting — is any of it yours?</span>
+    </div>
 
-  <h1>Find What’s Rightfully Yours</h1>
-  <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
+    <h1>Find What’s Rightfully Yours</h1>
+    <p>1 in 10 Americans has unclaimed property. Check in 30 seconds.</p>
 
-  <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
-    Click Your State to Start Searching
-  </button>
-</section>
-  
-<!-- Disclaimer Section -->
+    <button class="primary" onclick="document.getElementById('mapSection').scrollIntoView({ behavior: 'smooth' });">
+      Click Your State to Start Searching
+    </button>
+
+    <!-- Animated total counter (was missing before) -->
+    <p class="hero-total">
+      People have found <strong id="animatedAmount">$0+</strong> using these official links.
+    </p>
+  </section>
+
+  <!-- Disclaimer Section -->
   <section class="disclaimer-info">
-  <div class="disclaimer-container">
-    <h2>Not a Loan — It’s Your Money</h2>
-    <p>
-      FindMyFunds is not a loan service or lender. We help you locate <strong>unclaimed property and money</strong> held by state governments. This includes forgotten bank accounts, refund checks, life insurance payouts, utility deposits, and more — all waiting to be claimed by the rightful owners.
-    </p>
-    <p>
-      Every state has a treasury department that holds unclaimed assets. Our site simply connects you to the official, secure portals for each state — <strong>completely free</strong> and with no catch.
-    </p>
+    <div class="disclaimer-container">
+      <h2>Not a Loan — It’s Your Money</h2>
+      <p>
+        FindMyFunds is not a loan service or lender. We help you locate <strong>unclaimed property and money</strong> held by state governments. This includes forgotten bank accounts, refund checks, life insurance payouts, utility deposits, and more — all waiting to be claimed by the rightful owners.
+      </p>
+      <p>
+        Every state has a treasury department that holds unclaimed assets. Our site simply connects you to the official, secure portals for each state — <strong>completely free</strong> and with no catch.
+      </p>
 
-    <div class="warning-box">
-      <p><span class="warning-icon">⚠️</span> This is not a loan site. But if you think you may have money owed to you, start by choosing your state below.</p>
+      <div class="warning-box">
+        <p><span class="warning-icon" aria-hidden="true">⚠️</span> This is not a loan site. But if you think you may have money owed to you, start by choosing your state below.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-  
- <!-- Map Section -->
-<section id="mapSection" class="map-section">
-  <h2>Select Your State</h2>
-  <div class="state-grid-wrapper">
-    <a href="https://alabama.findyourunclaimedproperty.com/" target="_blank" class="state-circle" title="Alabama">AL</a>
-    <a href="https://unclaimedproperty.alaska.gov/" target="_blank" class="state-circle" title="Alaska">AK</a>
-    <a href="https://azdor.gov/unclaimed-property" target="_blank" class="state-circle" title="Arizona">AZ</a>
-    <a href="https://www.claimitar.gov/" target="_blank" class="state-circle" title="Arkansas">AR</a>
-    <a href="https://ucpi.sco.ca.gov/en/Property/SearchIndex" target="_blank" class="state-circle" title="California">CA</a>
-    <a href="https://colorado.findyourunclaimedproperty.com/app/claim-search" target="_blank" class="state-circle" title="Colorado">CO</a>
-    <a href="https://ctbiglist.gov/" target="_blank" class="state-circle" title="Connecticut">CT</a>
-    <a href="https://unclaimedproperty.delaware.gov/app/claim-search" target="_blank" class="state-circle" title="Delaware">DE</a>
-    <a href="https://www.fltreasurehunt.gov/" target="_blank" class="state-circle" title="Florida">FL</a>
-    <a href="https://dor.georgia.gov/unclaimed-property-program/how-do-i-search-unclaimed-property" target="_blank" class="state-circle" title="Georgia">GA</a>
-    <a href="https://unclaimedproperty.ehawaii.gov/lilo/property-search.html" target="_blank" class="state-circle" title="Hawaii">HI</a>
-    <a href="https://yourmoney.idaho.gov/app/claim-search" target="_blank" class="state-circle" title="Idaho">ID</a>
-    <a href="https://icash.illinoistreasurer.gov/app/claim-search" target="_blank" class="state-circle" title="Illinois">IL</a>
-    <a href="https://www.indianaunclaimed.gov/app/claim-search" target="_blank" class="state-circle" title="Indiana">IN</a>
-    <a href="https://www.greatiowatreasurehunt.gov/app/claim-search" target="_blank" class="state-circle" title="Iowa">IA</a>
-    <a href="https://unclaimedproperty.ks.gov/app/claim-search" target="_blank" class="state-circle" title="Kansas">KS</a>
-    <a href="https://kyclaims.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" class="state-circle" title="Kentucky">KY</a>
-    <a href="https://louisiana.findyourunclaimedproperty.com/app/claim-search" target="_blank" class="state-circle" title="Louisiana">LA</a>
-    <a href="https://interactive2.marylandtaxes.gov/UnclaimedStatus/" target="_blank" class="state-circle" title="Maryland">MD</a>
-    <a href="https://findmassmoney.com/app/claim-search" target="_blank" class="state-circle" title="Massachusetts">MA</a>
-    <a href="https://www.maineunclaimedproperty.gov/app/claim-search" target="_blank" class="state-circle" title="Maine">ME</a>
-    <a href="https://unclaimedproperty.michigan.gov/app/claim-search" target="_blank" class="state-circle" title="Michigan">MI</a>
-    <a href="https://minnesota.findyourunclaimedproperty.com/" target="_blank" class="state-circle" title="Minnesota">MN</a>
-    <a href="https://treasurer.mo.gov/UnclaimedProperty/en/Property/SearchIndex" target="_blank" class="state-circle" title="Missouri">MO</a>
-    <a href="https://ms.findyourunclaimedproperty.com/" target="_blank" class="state-circle" title="Mississippi">MS</a>
-    <a href="https://tap.dor.mt.gov/_/" target="_blank" class="state-circle" title="Montana">MT</a>
-    <a href="https://nebraskalostcash.nebraska.gov/" target="_blank" class="state-circle" title="Nebraska">NE</a>
-    <a href="https://www.nvup.gov/app/claim-search" target="_blank" class="state-circle" title="Nevada">NV</a>
-    <a href="https://www.findnhmoney.gov/app/claim-search" target="_blank" class="state-circle" title="New Hampshire">NH</a>
-    <a href="https://unclaimed.nccash.com/app/claim-search" target="_blank" class="state-circle" title="North Carolina">NC</a>
-    <a href="https://unclaimedproperty.nd.gov/app/claim-search" target="_blank" class="state-circle" title="North Dakota">ND</a>
-    <a href="https://nmclaims.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" class="state-circle" title="New Mexico">NM</a>
-    <a href="https://ouf.osc.state.ny.us/ouf/" target="_blank" class="state-circle" title="New York">NY</a>
-    <a href="https://unclaimedfunds.nj.gov/app/claim-search" target="_blank" class="state-circle" title="New Jersey">NJ</a>
-    <a href="https://unclaimedfunds.ohio.gov/app/claim-search" target="_blank" class="state-circle" title="Ohio">OH</a>
-    <a href="https://yourmoney.ok.gov/" target="_blank" class="state-circle" title="Oklahoma">OK</a>
-    <a href="https://unclaimed.oregon.gov/app/claim-search" target="_blank" class="state-circle" title="Oregon">OR</a>
-    <a href="https://unclaimedproperty.patreasury.gov/en/Property/SearchIndex" target="_blank" class="state-circle" title="Pennsylvania">PA</a>
-    <a href="https://www.findrimoney.gov/app/claim-search" target="_blank" class="state-circle" title="Rhode Island">RI</a>
-    <a href="https://southcarolina.findyourunclaimedproperty.com/app/claim-search" target="_blank" class="state-circle" title="South Carolina">SC</a>
-    <a href="https://southdakota.findyourunclaimedproperty.com/app/claim-search" target="_blank" class="state-circle" title="South Dakota">SD</a>
-    <a href="https://unclaimedproperty.tn.gov/app/claim-search" target="_blank" class="state-circle" title="Tennessee">TN</a>
-    <a href="https://www.claimittexas.gov/app/claim-search" target="_blank" class="state-circle" title="Texas">TX</a>
-    <a href="https://mycash.utah.gov/app/claim-search" target="_blank" class="state-circle" title="Utah">UT</a>
-    <a href="https://www.vamoneysearch.gov/" target="_blank" class="state-circle" title="Virginia">VA</a>
-    <a href="https://vermont.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" class="state-circle" title="Vermont">VT</a>
-    <a href="https://ucp.dor.wa.gov/app/claim-search" target="_blank" class="state-circle" title="Washington">WA</a>
-    <a href="https://tap.revenue.wi.gov/mta/_/" target="_blank" class="state-circle" title="Wisconsin">WI</a>
-    <a href="https://www.wvunclaimedproperty.gov/app/claim-search" target="_blank" class="state-circle" title="West Virginia">WV</a>
-    <a href="https://wyoming.findyourunclaimedproperty.com/app/claim-search" target="_blank" class="state-circle" title="Wyoming">WY</a>
-  </div>
-</section>
+  <!-- Map / State Links Section -->
+  <section id="mapSection" class="map-section">
+    <h2>Select Your State</h2>
+    <div class="state-grid-wrapper">
+      <a href="https://alabama.findyourunclaimedproperty.com/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Alabama" aria-label="Search Alabama unclaimed property">AL</a>
+      <a href="https://unclaimedproperty.alaska.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Alaska" aria-label="Search Alaska unclaimed property">AK</a>
+      <a href="https://azdor.gov/unclaimed-property" target="_blank" rel="noopener noreferrer" class="state-circle" title="Arizona" aria-label="Search Arizona unclaimed property">AZ</a>
+      <a href="https://www.claimitar.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Arkansas" aria-label="Search Arkansas unclaimed property">AR</a>
+      <a href="https://ucpi.sco.ca.gov/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="California" aria-label="Search California unclaimed property">CA</a>
+      <a href="https://colorado.findyourunclaimedproperty.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Colorado" aria-label="Search Colorado unclaimed property">CO</a>
+      <a href="https://ctbiglist.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Connecticut" aria-label="Search Connecticut unclaimed property">CT</a>
+      <a href="https://unclaimedproperty.delaware.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Delaware" aria-label="Search Delaware unclaimed property">DE</a>
+      <a href="https://www.fltreasurehunt.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Florida" aria-label="Search Florida unclaimed property">FL</a>
+      <a href="https://dor.georgia.gov/unclaimed-property-program/how-do-i-search-unclaimed-property" target="_blank" rel="noopener noreferrer" class="state-circle" title="Georgia" aria-label="Search Georgia unclaimed property">GA</a>
+      <a href="https://unclaimedproperty.ehawaii.gov/lilo/property-search.html" target="_blank" rel="noopener noreferrer" class="state-circle" title="Hawaii" aria-label="Search Hawaii unclaimed property">HI</a>
+      <a href="https://yourmoney.idaho.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Idaho" aria-label="Search Idaho unclaimed property">ID</a>
+      <a href="https://icash.illinoistreasurer.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Illinois" aria-label="Search Illinois unclaimed property">IL</a>
+      <a href="https://www.indianaunclaimed.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Indiana" aria-label="Search Indiana unclaimed property">IN</a>
+      <a href="https://www.greatiowatreasurehunt.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Iowa" aria-label="Search Iowa unclaimed property">IA</a>
+      <a href="https://unclaimedproperty.ks.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Kansas" aria-label="Search Kansas unclaimed property">KS</a>
+      <a href="https://kyclaims.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="Kentucky" aria-label="Search Kentucky unclaimed property">KY</a>
+      <a href="https://louisiana.findyourunclaimedproperty.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Louisiana" aria-label="Search Louisiana unclaimed property">LA</a>
+      <a href="https://interactive2.marylandtaxes.gov/UnclaimedStatus/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Maryland" aria-label="Search Maryland unclaimed property">MD</a>
+      <a href="https://findmassmoney.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Massachusetts" aria-label="Search Massachusetts unclaimed property">MA</a>
+      <a href="https://www.maineunclaimedproperty.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Maine" aria-label="Search Maine unclaimed property">ME</a>
+      <a href="https://unclaimedproperty.michigan.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Michigan" aria-label="Search Michigan unclaimed property">MI</a>
+      <a href="https://minnesota.findyourunclaimedproperty.com/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Minnesota" aria-label="Search Minnesota unclaimed property">MN</a>
+      <a href="https://treasurer.mo.gov/UnclaimedProperty/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="Missouri" aria-label="Search Missouri unclaimed property">MO</a>
+      <a href="https://ms.findyourunclaimedproperty.com/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Mississippi" aria-label="Search Mississippi unclaimed property">MS</a>
+      <a href="https://tap.dor.mt.gov/_/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Montana" aria-label="Search Montana unclaimed property">MT</a>
+      <a href="https://nebraskalostcash.nebraska.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Nebraska" aria-label="Search Nebraska unclaimed property">NE</a>
+      <a href="https://www.nvup.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Nevada" aria-label="Search Nevada unclaimed property">NV</a>
+      <a href="https://www.findnhmoney.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="New Hampshire" aria-label="Search New Hampshire unclaimed property">NH</a>
+      <a href="https://unclaimed.nccash.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="North Carolina" aria-label="Search North Carolina unclaimed property">NC</a>
+      <a href="https://unclaimedproperty.nd.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="North Dakota" aria-label="Search North Dakota unclaimed property">ND</a>
+      <a href="https://nmclaims.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="New Mexico" aria-label="Search New Mexico unclaimed property">NM</a>
+      <a href="https://ouf.osc.state.ny.us/ouf/" target="_blank" rel="noopener noreferrer" class="state-circle" title="New York" aria-label="Search New York unclaimed property">NY</a>
+      <a href="https://unclaimedfunds.nj.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="New Jersey" aria-label="Search New Jersey unclaimed property">NJ</a>
+      <a href="https://unclaimedfunds.ohio.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Ohio" aria-label="Search Ohio unclaimed property">OH</a>
+      <a href="https://yourmoney.ok.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Oklahoma" aria-label="Search Oklahoma unclaimed property">OK</a>
+      <a href="https://unclaimed.oregon.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Oregon" aria-label="Search Oregon unclaimed property">OR</a>
+      <a href="https://unclaimedproperty.patreasury.gov/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="Pennsylvania" aria-label="Search Pennsylvania unclaimed property">PA</a>
+      <a href="https://www.findrimoney.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Rhode Island" aria-label="Search Rhode Island unclaimed property">RI</a>
+      <a href="https://southcarolina.findyourunclaimedproperty.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="South Carolina" aria-label="Search South Carolina unclaimed property">SC</a>
+      <a href="https://southdakota.findyourunclaimedproperty.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="South Dakota" aria-label="Search South Dakota unclaimed property">SD</a>
+      <a href="https://unclaimedproperty.tn.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Tennessee" aria-label="Search Tennessee unclaimed property">TN</a>
+      <a href="https://www.claimittexas.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Texas" aria-label="Search Texas unclaimed property">TX</a>
+      <a href="https://mycash.utah.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Utah" aria-label="Search Utah unclaimed property">UT</a>
+      <a href="https://www.vamoneysearch.gov/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Virginia" aria-label="Search Virginia unclaimed property">VA</a>
+      <a href="https://vermont.unclaimedproperty.com/en/Property/SearchIndex" target="_blank" rel="noopener noreferrer" class="state-circle" title="Vermont" aria-label="Search Vermont unclaimed property">VT</a>
+      <a href="https://ucp.dor.wa.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Washington" aria-label="Search Washington unclaimed property">WA</a>
+      <a href="https://tap.revenue.wi.gov/mta/_/" target="_blank" rel="noopener noreferrer" class="state-circle" title="Wisconsin" aria-label="Search Wisconsin unclaimed property">WI</a>
+      <a href="https://www.wvunclaimedproperty.gov/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="West Virginia" aria-label="Search West Virginia unclaimed property">WV</a>
+      <a href="https://wyoming.findyourunclaimedproperty.com/app/claim-search" target="_blank" rel="noopener noreferrer" class="state-circle" title="Wyoming" aria-label="Search Wyoming unclaimed property">WY</a>
+    </div>
+  </section>
 
+  <!-- Testimonials -->
   <section class="testimonial-section">
-  <h2>Real People, Real Money Found</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial fade-in">
-      <p class="testimonial-text">"I found $418 from a forgotten insurance refund."</p>
-      <div class="testimonial-amount" data-amount="418">$0</div>
+    <h2>Real People, Real Money Found</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">"I found $418 from a forgotten insurance refund."</p>
+        <div class="testimonial-amount" data-amount="418">$0</div>
+      </div>
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">"$96 check from my old job — thanks to this site!"</p>
+        <div class="testimonial-amount" data-amount="96">$0</div>
+      </div>
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">"We found $1,120 for our nonprofit from an old utility deposit!"</p>
+        <div class="testimonial-amount" data-amount="1120">$0</div>
+      </div>
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">"Our business got back $19,144 in unclaimed funds years after we shut down — never expected that!"</p>
+        <div class="testimonial-amount" data-amount="19144">$0</div>
+      </div>
     </div>
-    <div class="testimonial fade-in">
-      <p class="testimonial-text">"$96 check from my old job — thanks to this site!"</p>
-      <div class="testimonial-amount" data-amount="96">$0</div>
-    </div>
-    <div class="testimonial fade-in">
-      <p class="testimonial-text">"We found $1,120 for our nonprofit from an old utility deposit!"</p>
-      <div class="testimonial-amount" data-amount="1120">$0</div>
-    </div>
-    <div class="testimonial fade-in">
-      <p class="testimonial-text">"Our business got back $19,144 in unclaimed funds years after we shut down — never expected that!"</p>
-      <div class="testimonial-amount" data-amount="19144">$0</div>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Check Proof -->
   <div class="check-proof">
     <h2>✔️ Official Checks Like This Are Issued Every Day</h2>
     <p>This real check shows money returned by the State of California.</p>
-    <img src="assets/check.jpg" alt="State of California Unclaimed Property Check" class="check-image">
+    <img src="assets/check.jpg" alt="State of California Unclaimed Property Check" class="check-image" loading="lazy">
     <p class="disclaimer">*Personal info redacted. Example shown with permission.</p>
   </div>
-</section>
 
   <!-- Donation Section -->
   <section id="donations" class="donations">
     <h2>This Site Helped You? Consider a Small Donation</h2>
     <p>If this site helped you recover lost funds, consider sending a thank-you donation.</p>
     <div class="donation-buttons">
-      <a href="https://cash.app/$FindMyFundsNow" target="_blank" class="cashapp-btn">Donate via Cash App</a>
-      <a href="https://venmo.com/FindMyFunds" target="_blank" class="venmo-btn">Donate via Venmo</a>
-      <a href="https://www.paypal.com/ncp/payment/LM9XCSPH43K7J" target="_blank" class="paypal-btn">Donate via PayPal</a>
+      <a href="https://cash.app/$FindMyFundsNow" target="_blank" rel="noopener noreferrer" class="cashapp-btn">Donate via Cash App</a>
+      <a href="https://venmo.com/FindMyFunds" target="_blank" rel="noopener noreferrer" class="venmo-btn">Donate via Venmo</a>
+      <a href="https://www.paypal.com/ncp/payment/LM9XCSPH43K7J" target="_blank" rel="noopener noreferrer" class="paypal-btn">Donate via PayPal</a>
     </div>
   </section>
 
   <!-- FAQ Section -->
   <section id="faq" class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      Is this legit? 🤔
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Is this legit? 🤔</div>
+      <div class="faq-answer">
+        Yes! We only link to official government websites. Every state has an official unclaimed property program, and we simply help you navigate to the right place.
+      </div>
     </div>
-    <div class="faq-answer">
-      Yes! We only link to official government websites. Every state has an official unclaimed property program, and we simply help you navigate to the right place.
-    </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      What’s the catch? 💰
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">What’s the catch? 💰</div>
+      <div class="faq-answer">
+        None — we just hope you'll donate if it helped. This service is completely free. We make no money from your claims and don't charge any fees.
+      </div>
     </div>
-    <div class="faq-answer">
-      None — we just hope you'll donate if it helped. This service is completely free. We make no money from your claims and don't charge any fees.
-    </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      Can I help others? 🤝
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Can I help others? 🤝</div>
+      <div class="faq-answer">
+        Please share the site with friends and family! Many people don't know about unclaimed property programs, and you could help them recover money they didn’t even know they had.
+      </div>
     </div>
-    <div class="faq-answer">
-      Please share the site with friends and family! Many people don't know about unclaimed property programs, and you could help them recover money they didn’t even know they had.
-    </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      How much money is typically found? 📊
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">How much money is typically found? 📊</div>
+      <div class="faq-answer">
+        Amounts vary widely — from small utility deposits of $20–50 to large insurance payouts of thousands of dollars. The average claim is around $300, but many people find multiple claims.
+      </div>
     </div>
-    <div class="faq-answer">
-      Amounts vary widely — from small utility deposits of $20–50 to large insurance payouts of thousands of dollars. The average claim is around $300, but many people find multiple claims.
-    </div>
-  </div>
-</section>
-  
-<section class="social-share">
-  <h2>Share This Site</h2>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://findmyfunds.today" target="_blank" aria-label="Share on Facebook">
-      <img src="assets/facebook.svg" alt="Facebook" />
-    </a>
-    <a href="https://x.com/YOUR_USERNAME" target="_blank" rel="noopener">
-  <img src="assets/x.svg" alt="X (formerly Twitter)" width="32" height="32">
-</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://findmyfunds.today" target="_blank" aria-label="Share on LinkedIn">
-      <img src="assets/linkedin.svg" alt="LinkedIn" />
-    </a>
-    <a href="https://api.whatsapp.com/send?text=Check%20FindMyFunds:%20https://findmyfunds.today" target="_blank" aria-label="Share on WhatsApp">
-      <img src="assets/whatsapp.svg" alt="WhatsApp" />
-    </a>
-    <a href="mailto:info@findmyfunds.today">
-  <img src="assets/email.svg" alt="Email us" width="32" height="32">
-</a>
-  </div>
-</section>
+  </section>
 
-   <!-- Footer -->
+  <!-- Social Share -->
+  <section class="social-share">
+    <h2>Share This Site</h2>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+        <img src="assets/facebook.svg" alt="Facebook" loading="lazy" />
+      </a>
+      <!-- Use Twitter's intent link so users can share instantly -->
+      <a href="https://twitter.com/intent/tweet?url=https://findmyfunds.today&text=Found%20unclaimed%20money%20links%20by%20state%20%E2%80%94%20check%20yours!" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+        <img src="assets/x.svg" alt="X (formerly Twitter)" width="32" height="32" loading="lazy">
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+        <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
+      </a>
+      <a href="https://api.whatsapp.com/send?text=Check%20FindMyFunds:%20https://findmyfunds.today" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+        <img src="assets/whatsapp.svg" alt="WhatsApp" loading="lazy" />
+      </a>
+      <a href="mailto:info@findmyfunds.today" aria-label="Email us">
+        <img src="assets/email.svg" alt="Email us" width="32" height="32" loading="lazy">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>FindMyFunds.today is not affiliated with any state government.</p>
   </footer>
-<script>
-// Fade-in on scroll
-const observerOptions = {
-  threshold: 0.2,
-  rootMargin: '0px 0px -30px 0px'
-};
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+  <!-- Scripts -->
+  <script>
+    // Fade-in on scroll
+    const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -30px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Count up animation
-function animateValue(el, start, end, duration) {
-  let startTimestamp = null;
-  const step = (timestamp) => {
-    if (!startTimestamp) startTimestamp = timestamp;
-    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    el.textContent = '$' + Math.floor(progress * (end - start) + start).toLocaleString();
-    if (progress < 1) {
+    // Count up animation for testimonial amounts
+    function animateValue(el, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        el.textContent = '$' + Math.floor(progress * (end - start) + start).toLocaleString();
+        if (progress < 1) window.requestAnimationFrame(step);
+      };
       window.requestAnimationFrame(step);
     }
-  };
-  window.requestAnimationFrame(step);
-}
+    const testimonialObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const amountEl = entry.target.querySelector('.testimonial-amount');
+          const finalAmount = parseInt(amountEl.getAttribute('data-amount'), 10);
+          animateValue(amountEl, 0, finalAmount, 1500);
+          testimonialObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.testimonial').forEach(t => testimonialObserver.observe(t));
+  </script>
 
-const testimonialObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const amountEl = entry.target.querySelector('.testimonial-amount');
-      const finalAmount = parseInt(amountEl.getAttribute('data-amount'), 10);
-      animateValue(amountEl, 0, finalAmount, 1500);
-      testimonialObserver.unobserve(entry.target);
+  <script>
+    // FAQ accordion
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const allAnswers = document.querySelectorAll('.faq-answer');
+      allAnswers.forEach(ans => { if (ans !== answer) ans.classList.remove('active'); });
+      answer.classList.toggle('active');
     }
-  });
-}, { threshold: 0.5 });
+  </script>
 
-document.querySelectorAll('.testimonial').forEach(t => testimonialObserver.observe(t));
-</script>
-<script>
-  function toggleFAQ(element) {
-    const answer = element.nextElementSibling;
-    const allAnswers = document.querySelectorAll('.faq-answer');
-
-    allAnswers.forEach(ans => {
-      if (ans !== answer) {
-        ans.classList.remove('active');
-      }
-    });
-
-    answer.classList.toggle('active');
-  }
-</script>
-<script>
-  const el = document.getElementById('animatedAmount');
-  const target = 12153276408;
-  let current = 0;
-  const duration = 2000; // in ms
-  const frameRate = 24;
-
-  const increment = target / (duration / (1000 / frameRate));
-
-  const counter = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      current = target;
-      clearInterval(counter);
+  <script>
+    // Big animated total in hero
+    const el = document.getElementById('animatedAmount');
+    if (el) {
+      const target = 12153276408; // adjust as needed
+      let current = 0;
+      const duration = 2000; // ms
+      const frameRate = 24;
+      const increment = target / (duration / (1000 / frameRate));
+      const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(counter);
+        }
+        el.textContent = '$' + Math.floor(current).toLocaleString() + '+';
+      }, 1000 / frameRate);
     }
-    el.textContent = '$' + Math.floor(current).toLocaleString() + '+';
-  }, 1000 / frameRate);
-</script>
+  </script>
 </body>
 </html>

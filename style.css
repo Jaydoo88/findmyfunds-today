@@ -213,8 +213,8 @@ button.primary:hover { background-color: #3A866C; }
    How It Works (Accordion)
    ======================= */
 .howitworks-section {
-  background-color: #ffffff;
-  padding: 60px 20px;
+  background-color: #ffffff !important;
+  padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
 }

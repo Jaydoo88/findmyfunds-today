@@ -212,11 +212,12 @@ button.primary:hover { background-color: #3A866C; }
 /* =======================
    How It Works (Accordion)
    ======================= */
-.howitworks-section {
+#how-it-works.howitworks-section {
   background-color: #ffffff !important;
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
+  border-radius: 8px; /* optional: adds nice rounded edges */
 }
 
 .howitworks-section h2 {
